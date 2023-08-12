@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { RiDiscordLine } from 'react-icons/ri'
+import { Button } from '@radix-ui/themes'
 
 export const Navigation = () => {
   return (
@@ -9,10 +10,12 @@ export const Navigation = () => {
         <Link href="/" className="font-bold">
           DivSplash
         </Link>
-        <a href="#" className="flex items-center gap-1 font-medium">
-          <RiDiscordLine className="text-xl" />
-          Join Discord
-        </a>
+        <Button variant="ghost" asChild size="3" color="blue">
+          <a href="#" className="flex items-center gap-1 font-medium">
+            <RiDiscordLine className="text-2xl" />
+            Discord
+          </a>
+        </Button>
       </div>
     </div>
   )
