@@ -7,10 +7,10 @@ export const Navigation = () => {
   return (
     <div className="sticky top-0 py-3 bg-white border-b-2 border-zinc-100">
       <div className="container flex items-center justify-between ">
-        <Link href="/" className="font-bold">
+        <Link href="/" className="font-medium text-zinc-500">
           DivSplash
         </Link>
-        <Button variant="ghost" asChild size="3" color="blue">
+        <Button variant="ghost" asChild size="3" color="gray">
           <a href="#" className="flex items-center gap-1 font-medium">
             <RiDiscordLine className="text-2xl" />
             Discord
