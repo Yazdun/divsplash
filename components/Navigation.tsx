@@ -1,13 +1,16 @@
+import Link from 'next/link'
 import React from 'react'
-import { BsDiscord } from 'react-icons/bs'
+import { RiDiscordLine } from 'react-icons/ri'
 
 export const Navigation = () => {
   return (
-    <div className="fixed top-0 left-0 right-0 p-3 bg-white border-b-2 border-zinc-100">
+    <div className="sticky top-0 py-3 bg-white border-b-2 border-zinc-100">
       <div className="container flex items-center justify-between ">
-        <span className="font-bold">DivSplash</span>
-        <a href="#" className="flex items-center gap-1 font-bold text-blue-600">
-          <BsDiscord className="text-lg" />
+        <Link href="/" className="font-bold">
+          DivSplash
+        </Link>
+        <a href="#" className="flex items-center gap-1 font-medium">
+          <RiDiscordLine className="text-xl" />
           Join Discord
         </a>
       </div>

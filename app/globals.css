@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply text-sm bg-grayscale-100 md:text-base;
+  @apply text-sm md:text-base;
 }
