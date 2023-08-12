@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import { FiSearch } from 'react-icons/fi'
 
 export default function Home() {
   return (
@@ -9,8 +10,9 @@ export default function Home() {
         <p>Free cool illustrations for your next project</p>
         <Link
           href="#"
-          className="flex px-5 py-3 text-white bg-black rounded-lg"
+          className="flex items-center gap-1 px-5 py-3 text-white bg-black rounded-lg hover:bg-zinc-800"
         >
+          <FiSearch className="text-lg" />
           Browse Illustrations
         </Link>
       </div>
