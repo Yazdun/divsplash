@@ -5,7 +5,7 @@ import { Button } from '@radix-ui/themes'
 
 export const Navigation = () => {
   return (
-    <div className="sticky top-0 py-3 bg-white border-b-2 border-zinc-100">
+    <div className="sticky top-0 z-50 py-3 bg-white shadow-sm border-zinc-100">
       <div className="container flex items-center justify-between ">
         <Link href="/" className="font-medium text-zinc-500">
           DivSplash

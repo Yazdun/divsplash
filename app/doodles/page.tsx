@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { DoodleDialog } from '@/components'
 import React from 'react'
 
 export default function Doodles() {
@@ -13,13 +13,7 @@ export default function Doodles() {
       </div>
       <ul className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {Array.from(Array(12).keys()).map(i => {
-          return (
-            <li key={i}>
-              <button className="flex justify-center w-full p-5 border rounded-md bg-neutral-50">
-                <Image src="/doodle.png" alt="hello" width={200} height={200} />
-              </button>
-            </li>
-          )
+          return <DoodleDialog key={i} />
         })}
       </ul>
     </div>
