@@ -11,7 +11,7 @@ export default function Doodles() {
           aspernatur!
         </p>
       </div>
-      <ul className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <ul className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {Array.from(Array(12).keys()).map(i => {
           return <DoodleDialog key={i} />
         })}

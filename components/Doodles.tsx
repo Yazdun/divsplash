@@ -11,7 +11,7 @@ export const DoodleDialog = () => {
     <Dialog.Root>
       <Dialog.Trigger>
         <li>
-          <button className="flex justify-center w-full p-5 border rounded-md bg-neutral-50">
+          <button className="flex justify-center w-full p-5 bg-white rounded-md shadow-sm">
             <Image src="/doodle.png" alt="hello" width={200} height={200} />
           </button>
         </li>
