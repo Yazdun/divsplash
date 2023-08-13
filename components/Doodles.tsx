@@ -4,6 +4,7 @@ import React from 'react'
 import { Button, Dialog, Flex } from '@radix-ui/themes'
 import Image from 'next/image'
 import { PiDownloadSimpleBold } from 'react-icons/pi'
+import { toast } from 'react-hot-toast'
 
 export const DoodleDialog = () => {
   return (
@@ -30,7 +31,11 @@ export const DoodleDialog = () => {
               Cancel
             </Button>
           </Dialog.Close>
-          <Button variant="solid" color="teal">
+          <Button
+            variant="solid"
+            color="teal"
+            onClick={() => toast.success('Downloaded successfully')}
+          >
             <PiDownloadSimpleBold />
             Download
           </Button>
