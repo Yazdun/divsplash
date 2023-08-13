@@ -12,18 +12,23 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
+    "@radix-ui/themes": "^1.0.0",
     "@types/node": "20.3.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "autoprefixer": "10.4.14",
+    "clsx": "^2.0.0",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
     "framer-motion": "^10.12.17",
     "next": "13.4.7",
+    "next-auth": "^4.23.0",
     "next-themes": "^0.2.1",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.10.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.3"
   },
