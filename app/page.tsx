@@ -5,7 +5,7 @@ import { Button } from '@radix-ui/themes'
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center h-[90vh]">
+    <div className="flex items-center justify-center h-[87vh]">
       <div className="flex flex-col items-center gap-2 text-center">
         <h1 className="text-4xl font-bold">Welcome to DivSplash</h1>
         <p>Free and cool doodles for your next project</p>
