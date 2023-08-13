@@ -1,20 +1,20 @@
 import Link from 'next/link'
 import React from 'react'
-import { RiDiscordLine } from 'react-icons/ri'
+import { FiUserPlus } from 'react-icons/fi'
 import { Button } from '@radix-ui/themes'
 
 export const Navigation = () => {
   return (
     <div className="sticky top-0 z-50 py-3 bg-white shadow-sm border-zinc-100">
       <div className="container flex items-center justify-between ">
-        <Link href="/" className="font-medium text-zinc-500">
+        <Link href="/" className="font-medium">
           DivSplash
         </Link>
-        <Button variant="ghost" asChild size="3" color="gray">
-          <a href="#" className="flex items-center gap-1 font-medium">
-            <RiDiscordLine className="text-2xl" />
-            Discord
-          </a>
+        <Button variant="outline" size="3" color="indigo">
+          <div className="flex items-center gap-2">
+            <FiUserPlus className="mb-[0.07rem]" />
+            Join DivSplash
+          </div>
         </Button>
       </div>
     </div>
