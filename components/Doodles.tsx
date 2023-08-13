@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { Button, Dialog, Flex } from '@radix-ui/themes'
+import { Button, Dialog } from '@radix-ui/themes'
 import Image from 'next/image'
 import { PiDownloadSimpleBold } from 'react-icons/pi'
 import { toast } from 'react-hot-toast'
