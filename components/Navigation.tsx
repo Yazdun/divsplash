@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { FiUserPlus } from 'react-icons/fi'
-import { Button } from '@radix-ui/themes'
+import { SocialsLogin } from './SocialsLogin'
 
 export const Navigation = () => {
   return (
@@ -10,12 +9,7 @@ export const Navigation = () => {
         <Link href="/" className="font-medium">
           DivSplash
         </Link>
-        <Button variant="outline" size="3" color="indigo">
-          <div className="flex items-center gap-2">
-            <FiUserPlus className="mb-[0.07rem]" />
-            Join DivSplash
-          </div>
-        </Button>
+        <SocialsLogin />
       </div>
     </div>
   )
