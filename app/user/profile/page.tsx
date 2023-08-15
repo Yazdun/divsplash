@@ -1,10 +1,10 @@
 import React from 'react'
+import { User as UserProfile } from '@/components'
 
 export default function User() {
   return (
     <div className="container mt-10 text-center">
-      <h1 className="text-2xl font-bold text-center">User profile page</h1>
-      <p>Coming soon</p>
+      <UserProfile />
     </div>
   )
 }

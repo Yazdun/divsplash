@@ -6,10 +6,10 @@ import { Button } from '@radix-ui/themes'
 export default function Home() {
   return (
     <div className="flex items-center justify-center h-[87vh]">
-      <div className="flex flex-col items-center gap-2 text-center">
-        <h1 className="text-4xl font-bold">Welcome to DivSplash</h1>
+      <div className="flex flex-col items-center gap-2 p-5 text-center">
+        <h1 className="text-2xl font-bold md:text-3xl">Welcome to DivSplash</h1>
         <p>Free and cool doodles for your next project</p>
-        <Button asChild size="4" color="indigo" variant="solid">
+        <Button asChild size="3" color="indigo" variant="solid">
           <Link href="/doodles" className="flex items-center gap-1">
             <FiSearch className="text-lg" />
             Browse Doodles

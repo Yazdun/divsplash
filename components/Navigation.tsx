@@ -15,9 +15,11 @@ import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { HiLogout } from 'react-icons/hi'
 import { ImSpinner8 } from 'react-icons/im'
+import { useSearchParams } from 'next/navigation'
+import { toast } from 'react-hot-toast'
 
 export const Navigation = () => {
-  const { data: session, status } = useSession()
+  const { status } = useSession()
 
   return (
     <div className="sticky top-0 z-50 py-3 bg-white shadow-sm border-zinc-100">
@@ -38,8 +40,6 @@ export const Navigation = () => {
 
 export const UserNavigation = () => {
   const { data: session } = useSession()
-
-  console.log(session)
 
   return (
     <DropdownMenu.Root dir="rtl">
@@ -79,6 +79,11 @@ export const UserNavigation = () => {
 
 export const SocialsLogin = () => {
   const [loading, setLoading] = useState(false)
+  const params = useSearchParams()
+
+  React.useEffect(() => {
+    if (params.get('error')) toast.error('Login failed! Please try again')
+  }, [params])
 
   const handleLogin = () => {
     setLoading(true)
@@ -96,7 +101,7 @@ export const SocialsLogin = () => {
         </Button>
       </Dialog.Trigger>
 
-      <Dialog.Content style={{ maxWidth: 450 }}>
+      <Dialog.Content style={{ maxWidth: 450 }} className="m-5">
         <div className="text-center">
           <h1 className="text-2xl font-semibold">Socials Login</h1>
           <p>Choose your social account to continute</p>
