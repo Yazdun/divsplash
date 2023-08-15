@@ -17,7 +17,7 @@ export const DoodleDialog = () => {
         </li>
       </Dialog.Trigger>
 
-      <Dialog.Content style={{ maxWidth: 400 }}>
+      <Dialog.Content style={{ maxWidth: 400 }} className="m-5">
         <Dialog.Title>Download Doodle</Dialog.Title>
         <Dialog.Description size="2" mb="4">
           <div className="flex justify-center w-full p-5 border-2 border-dashed rounded-md bg-neutral-50">
