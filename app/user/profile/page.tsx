@@ -13,7 +13,7 @@ export default async function User() {
     },
   )
 
-  const { data } = await supabase.from('users').select('name,email')
+  const { data } = await supabase.from('users').select('name')
 
   return (
     <div className="container mt-10 text-center">{JSON.stringify(data)}</div>
