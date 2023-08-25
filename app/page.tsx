@@ -3,6 +3,8 @@ import React from 'react'
 import { FiSearch } from 'react-icons/fi'
 import { Button } from '@radix-ui/themes'
 
+export const dynamic = 'force-dynamic'
+
 export default function Home() {
   return (
     <div className="flex items-center justify-center h-[87vh]">

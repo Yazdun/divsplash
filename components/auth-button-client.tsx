@@ -9,13 +9,13 @@ import { useRouter } from 'next/navigation'
 import React from 'react'
 
 export function AuthButtonClient({ session }: { session: Session | null }) {
-  const supabase = createClientComponentClient()
+  const supabase = createClientComponentClient<Database>()
 
   const handleSignIn = async () => {
     await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: 'http://localhost:3000/auth/callback',
+        redirectTo: `${location.origin}/auth/callback`,
       },
     })
   }
@@ -28,7 +28,7 @@ export function AuthButtonClient({ session }: { session: Session | null }) {
 }
 
 export function AuthButtonSignOut() {
-  const supabase = createClientComponentClient()
+  const supabase = createClientComponentClient<Database>()
   const router = useRouter()
 
   const handleSignOut = async () => {

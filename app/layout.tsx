@@ -5,7 +5,6 @@ import { Navigation } from '@/components'
 import { Theme } from '@radix-ui/themes'
 import { Toaster } from 'react-hot-toast'
 import clsx from 'clsx'
-import { Providers } from '@/context'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,13 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx(inter.className, 'bg-zinc-50')}>
-        <Providers>
-          <Toaster position="bottom-center" reverseOrder={false} />
-          <Theme>
-            <Navigation />
-            {children}
-          </Theme>
-        </Providers>
+        <Toaster position="bottom-center" reverseOrder={false} />
+        <Theme>
+          <Navigation />
+          {children}
+        </Theme>
       </body>
     </html>
   )

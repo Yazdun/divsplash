@@ -4,8 +4,10 @@ import { redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
 import { AuthButtonSignOut } from '@/components'
 
+export const dynamic = 'force-dynamic'
+
 export default async function User() {
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = createServerComponentClient<Database>({ cookies })
 
   const {
     data: { session },
