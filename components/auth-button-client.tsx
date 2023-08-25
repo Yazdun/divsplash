@@ -11,11 +11,13 @@ import React from 'react'
 export function AuthButtonClient({ session }: { session: Session | null }) {
   const supabase = createClientComponentClient<Database>()
 
+  console.log(location.origin)
+
   const handleSignIn = async () => {
     await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${location.origin}/auth/callback`,
+        redirectTo: `https://divsplash.co/auth/callback`,
       },
     })
   }
