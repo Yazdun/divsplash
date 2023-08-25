@@ -1,21 +1,23 @@
 import React from 'react'
-import { User as UserProfile } from '@/components'
-import { createClient } from '@supabase/supabase-js'
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import { redirect } from 'next/navigation'
+import { cookies } from 'next/headers'
+import { AuthButtonSignOut } from '@/components'
 
 export default async function User() {
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    {
-      db: {
-        schema: 'next_auth',
-      },
-    },
-  )
+  const supabase = createServerComponentClient({ cookies })
 
-  const { data } = await supabase.from('users').select('name')
+  const {
+    data: { session },
+  } = await supabase.auth.getSession()
+
+  if (!session) {
+    redirect('/')
+  }
 
   return (
-    <div className="container mt-10 text-center">{JSON.stringify(data)}</div>
+    <div className="container mt-10 text-center">
+      <AuthButtonSignOut />
+    </div>
   )
 }
