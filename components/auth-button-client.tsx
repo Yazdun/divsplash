@@ -1,5 +1,6 @@
 'use client'
 
+import { Button } from '@radix-ui/themes'
 import {
   createClientComponentClient,
   Session,
@@ -21,9 +22,13 @@ export function AuthButtonClient({ session }: { session: Session | null }) {
   }
 
   return session ? (
-    <Link href="/user/profile">Profile</Link>
+    <Button asChild variant="solid" color="green">
+      <Link href="/user/profile">Go to Profile</Link>
+    </Button>
   ) : (
-    <button onClick={handleSignIn}>Login</button>
+    <Button variant="solid" color="green" onClick={handleSignIn}>
+      Login with Google
+    </Button>
   )
 }
 
@@ -36,5 +41,9 @@ export function AuthButtonSignOut() {
     router.refresh()
   }
 
-  return <button onClick={handleSignOut}>SignOut</button>
+  return (
+    <Button variant="solid" color="red" onClick={handleSignOut}>
+      Sign Out
+    </Button>
+  )
 }
