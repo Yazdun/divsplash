@@ -9,7 +9,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
-export function AuthButtonClient({ session }: { session: Session | null }) {
+export function AuthButtonClient({
+  session,
+  role,
+}: {
+  session: Session | null
+  role: string | undefined
+}) {
   const supabase = createClientComponentClient<Database>()
 
   const handleSignIn = async () => {
@@ -23,7 +29,9 @@ export function AuthButtonClient({ session }: { session: Session | null }) {
 
   return session ? (
     <Button asChild variant="solid" color="green">
-      <Link href="/user/dashboard">Dashboard</Link>
+      <Link href={role === 'admin' ? '/admin/dashboard' : '/user/dashboard'}>
+        Dashboard
+      </Link>
     </Button>
   ) : (
     <Button variant="solid" color="green" onClick={handleSignIn}>
