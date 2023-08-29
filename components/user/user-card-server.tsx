@@ -17,7 +17,8 @@ export const UserCardServer = ({ session }: { session: Session | null }) => {
       <div className="space-y-2 lg:text-center">
         <ul>
           <li>{session.user.user_metadata.name}</li>
-          <li>{session.user.user_metadata.email}</li>
+          <li>divsplashadmin@gmail.com</li>
+          {/* <li>{session.user.user_metadata.email}</li> */}
         </ul>
         <AuthButtonSignOut />
       </div>
