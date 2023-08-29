@@ -6,6 +6,8 @@ import { Theme } from '@radix-ui/themes'
 import { Toaster } from 'react-hot-toast'
 import clsx from 'clsx'
 
+export const dynamic = 'force-dynamic'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
