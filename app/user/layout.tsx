@@ -7,11 +7,11 @@ import { Avatar } from '@radix-ui/themes'
 export const dynamic = 'force-dynamic'
 
 export const metadata = {
-  title: 'DivSplash',
-  description: 'Welcome to DivSplash Babyyy!',
+  title: 'DivSplash — Dashboard',
+  description: 'Welcome to DivSplash!',
 }
 
-export default async function RootLayout({
+export default async function UserLayout({
   children,
 }: {
   children: React.ReactNode

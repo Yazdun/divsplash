@@ -1,3 +1,3 @@
-export * from './Navigation'
-export * from './Doodles'
+export * from './navigation'
+export * from './doodles'
 export * from './auth'

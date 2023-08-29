@@ -1,16 +1,14 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import '@radix-ui/themes/styles.css'
-import { Navigation } from '@/components'
+import { NavigationServer } from '@/components'
 import { Theme } from '@radix-ui/themes'
 import { Toaster } from 'react-hot-toast'
 import clsx from 'clsx'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export const metadata = {
-  title: 'DivSplash',
-  description: 'Welcome to DivSplash Babyyy!',
+  title: 'DivSplash — Homepage ',
+  description: 'Welcome to DivSplash!',
 }
 
 export default function RootLayout({
@@ -20,10 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className, 'bg-zinc-50')}>
+      <body className={clsx('bg-zinc-50')}>
         <Toaster position="bottom-center" reverseOrder={false} />
         <Theme>
-          <Navigation />
+          <NavigationServer />
           {children}
         </Theme>
       </body>
