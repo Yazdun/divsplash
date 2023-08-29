@@ -11,7 +11,11 @@ export const Navigation = () => {
           <TbGuitarPick className="text-2xl" />
         </Link>
 
-        <AuthButtonServer />
+        <div className="flex items-center gap-5 text-sm">
+          <Link href="/user/dashboard">User dashboard</Link>
+          <Link href="/admin/dashboard">Admin dashboard</Link>
+          <AuthButtonServer />
+        </div>
       </div>
     </div>
   )
