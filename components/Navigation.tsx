@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { AuthButtonServer } from './auth-button-server'
+import { AuthButtonServer } from '@/components'
 import { TbGuitarPick } from 'react-icons/tb'
 
 export const Navigation = () => {
