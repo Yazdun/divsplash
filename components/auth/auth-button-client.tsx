@@ -1,5 +1,6 @@
 'use client'
 
+import { Button } from '@radix-ui/themes'
 import {
   createClientComponentClient,
   Session,
@@ -8,7 +9,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
-export function AuthButtonClient({ session }: { session: Session | null }) {
+export function AuthButtonClient({
+  session,
+  role,
+}: {
+  session: Session | null
+  role: string | undefined
+}) {
   const supabase = createClientComponentClient<Database>()
 
   const handleSignIn = async () => {
@@ -21,9 +28,15 @@ export function AuthButtonClient({ session }: { session: Session | null }) {
   }
 
   return session ? (
-    <Link href="/user/profile">Profile</Link>
+    <Button asChild variant="solid" color="green">
+      <Link href={role === 'admin' ? '/admin/dashboard' : '/user/dashboard'}>
+        {role === 'admin' ? 'Admin Panel' : 'Dashboard'}
+      </Link>
+    </Button>
   ) : (
-    <button onClick={handleSignIn}>Login</button>
+    <Button variant="solid" color="green" onClick={handleSignIn}>
+      Login with Google
+    </Button>
   )
 }
 
@@ -36,5 +49,9 @@ export function AuthButtonSignOut() {
     router.refresh()
   }
 
-  return <button onClick={handleSignOut}>SignOut</button>
+  return (
+    <Button variant="solid" color="red" onClick={handleSignOut}>
+      Sign Out
+    </Button>
+  )
 }
