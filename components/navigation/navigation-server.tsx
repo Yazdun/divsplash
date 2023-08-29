@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { AuthButtonServer } from '@/components'
 import { TbGuitarPick } from 'react-icons/tb'
+import { Button } from '@radix-ui/themes'
 
 export const NavigationServer = () => {
   return (
@@ -12,8 +13,11 @@ export const NavigationServer = () => {
         </Link>
 
         <div className="flex items-center gap-5 text-sm">
-          <Link href="/user/dashboard">User dashboard</Link>
-          <Link href="/admin/dashboard">Admin dashboard</Link>
+          <Button size="2" highContrast color="gray" variant="ghost" asChild>
+            <Link href="/doodles" className="font-semibold">
+              Browse Doodles
+            </Link>
+          </Button>
           <AuthButtonServer />
         </div>
       </div>
