@@ -23,7 +23,7 @@ export function AuthButtonClient({ session }: { session: Session | null }) {
 
   return session ? (
     <Button asChild variant="solid" color="green">
-      <Link href="/user/profile">Go to Profile</Link>
+      <Link href="/user/dashboard">Dashboard</Link>
     </Button>
   ) : (
     <Button variant="solid" color="green" onClick={handleSignIn}>
