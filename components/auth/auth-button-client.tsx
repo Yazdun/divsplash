@@ -30,7 +30,7 @@ export function AuthButtonClient({
   return session ? (
     <Button asChild variant="solid" color="green">
       <Link href={role === 'admin' ? '/admin/dashboard' : '/user/dashboard'}>
-        Dashboard
+        {role === 'admin' ? 'Admin Panel' : 'Dashboard'}
       </Link>
     </Button>
   ) : (
