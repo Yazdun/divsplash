@@ -1,7 +1,5 @@
 import Link from 'next/link'
 import React from 'react'
-import { FiSearch } from 'react-icons/fi'
-import { Button } from '@radix-ui/themes'
 
 export const dynamic = 'force-dynamic'
 

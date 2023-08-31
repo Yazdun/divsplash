@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import '@radix-ui/themes/styles.css'
 import './globals.css'
 import { NavigationServer } from '@/components'
@@ -8,7 +8,7 @@ import clsx from 'clsx'
 
 export const dynamic = 'force-dynamic'
 
-const inter = Inter({ subsets: ['latin'] })
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'DivSplash — Homepage ',
@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className, 'bg-zinc-50')}>
+      <body className={clsx(montserrat.className, 'bg-zinc-50')}>
         <Toaster position="bottom-center" reverseOrder={false} />
         <Theme>
           <NavigationServer />
