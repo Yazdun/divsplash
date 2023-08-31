@@ -31,7 +31,9 @@ export default async function UserLayout({
         DivSplash User Panel 💻
       </h1>
       <div className="flex flex-col max-w-lg gap-5 m-auto lg:max-w-full lg:flex-row lg:m-0">
-        <UserCardServer session={session} />
+        <div className="w-full md:w-[300px]">
+          <UserCardServer session={session} />
+        </div>
         {children}
       </div>
     </main>

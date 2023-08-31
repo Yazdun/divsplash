@@ -8,7 +8,7 @@ export const UserCardServer = ({ session }: { session: Session | null }) => {
   if (!session) return null
 
   return (
-    <Card className="flex items-center justify-center gap-5 md:w-[300px] lg:max-w-sm lg:items-center lg:flex-col">
+    <Card className="flex items-center justify-center w-full gap-5 lg:items-center lg:flex-col">
       <Avatar
         size="7"
         src={session.user.user_metadata.avatar_url}

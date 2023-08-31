@@ -1,8 +1,11 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
-import { AuthButtonSignOut, UserCardServer } from '@/components'
-import { Avatar } from '@radix-ui/themes'
+import { Card, UserCardServer } from '@/components'
+import Link from 'next/link'
+import { RxDashboard } from 'react-icons/rx'
+import { FiUsers } from 'react-icons/fi'
+import { BsFolder } from 'react-icons/bs'
 
 export const dynamic = 'force-dynamic'
 
@@ -37,8 +40,39 @@ export default async function AdminLayout({
       <h1 className="text-lg font-bold text-center lg:text-left">
         DivSplash Admin Panel 🦁
       </h1>
-      <div className="flex flex-col max-w-lg gap-5 m-auto lg:max-w-full lg:flex-row lg:m-0">
-        <UserCardServer session={session} />
+      <div className="flex flex-col max-w-lg gap-5 m-auto lg:max-w-full lg:flex-row lg:m-0 lg:items-start">
+        <div className="md:w-[300px] w-full space-y-2">
+          <UserCardServer session={session} />
+          <Card as="ul" className="p-0 text-sm">
+            <li>
+              <Link
+                className="flex items-center justify-between px-5 py-2 border-b-2 border-zinc-50 hover:bg-zinc-50"
+                href="/admin/dashboard"
+              >
+                Dashboard
+                <RxDashboard />
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="flex items-center justify-between px-5 py-2 border-b-2 border-zinc-50 hover:bg-zinc-50"
+                href="/admin/users"
+              >
+                Users
+                <FiUsers />
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="flex items-center justify-between px-5 py-2 hover:bg-zinc-50"
+                href="/admin/doodles"
+              >
+                Doodles
+                <BsFolder />
+              </Link>
+            </li>
+          </Card>
+        </div>
         {children}
       </div>
     </main>
