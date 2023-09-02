@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { AuthButtonServer } from '@/components'
 import { TbGuitarPick } from 'react-icons/tb'
 import { Button } from '@radix-ui/themes'
+import { ROUTES } from '@/constants'
 
 export const NavigationServer = () => {
   return (
@@ -14,7 +15,7 @@ export const NavigationServer = () => {
 
         <div className="flex items-center gap-5 text-sm">
           <Button size="2" highContrast color="gray" variant="ghost" asChild>
-            <Link href="/doodles" className="font-semibold">
+            <Link href={ROUTES.PUBLIC.DOODLES} className="font-semibold">
               Browse Doodles
             </Link>
           </Button>

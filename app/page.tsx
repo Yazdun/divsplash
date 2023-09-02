@@ -1,3 +1,4 @@
+import { ROUTES } from '@/constants'
 import Link from 'next/link'
 import React from 'react'
 
@@ -14,7 +15,7 @@ export default function Home() {
           <li>
             <Link
               className="flex justify-center p-2 text-center"
-              href="/admin/dashboard"
+              href={ROUTES.ADMIN.DASHBOARD}
             >
               - Protected Admin Dashboard
             </Link>
@@ -22,7 +23,7 @@ export default function Home() {
           <li>
             <Link
               className="flex justify-center p-2 text-center"
-              href="/admin/dashboard"
+              href={ROUTES.USER.DASHBOARD}
             >
               - Protected User Dashboard
             </Link>
@@ -30,7 +31,7 @@ export default function Home() {
           <li>
             <Link
               className="flex justify-center p-2 text-center"
-              href="/doodles"
+              href={ROUTES.PUBLIC.DOODLES}
             >
               - Public Doodles
             </Link>

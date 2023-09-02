@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { RxDashboard } from 'react-icons/rx'
 import { FiUsers } from 'react-icons/fi'
 import { BsFolder } from 'react-icons/bs'
+import { ROUTES } from '@/constants'
 
 export const dynamic = 'force-dynamic'
 
@@ -43,11 +44,11 @@ export default async function AdminLayout({
       <div className="flex flex-col max-w-lg gap-5 m-auto lg:max-w-full lg:flex-row lg:m-0 lg:items-start">
         <div className="md:w-[300px] w-full space-y-2">
           <UserCardServer session={session} />
-          <Card as="ul" className="p-0 text-sm">
+          <Card as="ul" style={{ padding: 0 }} className="text-sm">
             <li>
               <Link
-                className="flex items-center justify-between px-5 py-2 border-b-2 border-zinc-50 hover:bg-zinc-50"
-                href="/admin/dashboard"
+                className="flex items-center justify-between px-5 py-3 border-b-2 border-zinc-50 hover:bg-zinc-50"
+                href={ROUTES.ADMIN.DASHBOARD}
               >
                 Dashboard
                 <RxDashboard />
@@ -55,8 +56,8 @@ export default async function AdminLayout({
             </li>
             <li>
               <Link
-                className="flex items-center justify-between px-5 py-2 border-b-2 border-zinc-50 hover:bg-zinc-50"
-                href="/admin/users"
+                className="flex items-center justify-between px-5 py-3 border-b-2 border-zinc-50 hover:bg-zinc-50"
+                href={ROUTES.ADMIN.USERS}
               >
                 Users
                 <FiUsers />
@@ -64,8 +65,8 @@ export default async function AdminLayout({
             </li>
             <li>
               <Link
-                className="flex items-center justify-between px-5 py-2 hover:bg-zinc-50"
-                href="/admin/doodles"
+                className="flex items-center justify-between px-5 py-3 hover:bg-zinc-50"
+                href={ROUTES.ADMIN.DOODLES}
               >
                 Doodles
                 <BsFolder />
