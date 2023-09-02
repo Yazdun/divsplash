@@ -12,22 +12,25 @@ export interface Database {
       doodles: {
         Row: {
           created_at: string
+          fileKey: string
+          fileUrl: string
           id: string
-          image: string
           title: string
           user_id: string
         }
         Insert: {
           created_at?: string
+          fileKey: string
+          fileUrl: string
           id?: string
-          image: string
           title: string
           user_id: string
         }
         Update: {
           created_at?: string
+          fileKey?: string
+          fileUrl?: string
           id?: string
-          image?: string
           title?: string
           user_id?: string
         }

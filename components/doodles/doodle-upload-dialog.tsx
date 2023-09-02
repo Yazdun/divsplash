@@ -1,17 +1,22 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Dialog } from '@radix-ui/themes'
 import { AiOutlinePlus } from 'react-icons/ai'
-import { UploadImageDndClient } from '../upload-image'
+import { FileResponse, UploadImageDndClient } from '../upload-image'
 import { FormProvider, useForm } from 'react-hook-form'
 import { Input, titleValidation } from '../ui'
 
 export const UploadDoodleDialog = () => {
   const methods = useForm()
 
-  const handleSubmit = methods.handleSubmit(data => {
+  const [files, setFiles] = useState<FileResponse[] | undefined>(undefined)
+
+  const handleSubmit = methods.handleSubmit(async data => {
     console.log(data)
+    console.log(files)
+    if (files) {
+    }
   })
 
   return (
@@ -28,7 +33,7 @@ export const UploadDoodleDialog = () => {
         className="m-5 space-y-4"
       >
         <Dialog.Title>Create Doodle</Dialog.Title>
-        <UploadImageDndClient />
+        <UploadImageDndClient setFiles={setFiles} />
         <FormProvider {...methods}>
           <form className="space-y-4" onSubmit={e => e.preventDefault()}>
             <Input {...titleValidation} />

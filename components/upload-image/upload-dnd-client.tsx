@@ -8,17 +8,18 @@ import { OurFileRouter } from '../../app/api/uploadthing/core'
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 
-export function UploadImageDndClient() {
-  const [images, setImages] = useState<
-    { fileUrl: string; fileKey: string }[] | undefined
-  >([])
+export type FileResponse = { fileUrl: string; fileKey: string }
 
+export function UploadImageDndClient({
+  setFiles,
+}: {
+  setFiles: (files: FileResponse[] | undefined) => void
+}) {
   return (
     <UploadDropzone<OurFileRouter>
       endpoint="imageUploader"
       onClientUploadComplete={res => {
-        // Do something with the response
-        console.log('Files: ', res)
+        setFiles(res)
         toast.success('Upload Completed')
       }}
       onUploadError={(error: Error) => {
