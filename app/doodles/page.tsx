@@ -12,7 +12,7 @@ export default async function Doodles() {
   return (
     <ul className="container grid gap-5 p-5 md:grid-cols-2 lg:grid-cols-4">
       {doodles?.map(doodle => {
-        return <DoodleDetailsDialog key={doodle.id} />
+        return <DoodleDetailsDialog key={doodle.id} doodle={doodle} />
       })}
     </ul>
   )
