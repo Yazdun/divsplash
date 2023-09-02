@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/constants'
 import { Button } from '@radix-ui/themes'
 import {
   createClientComponentClient,
@@ -29,7 +30,9 @@ export function AuthButtonClient({
 
   return session ? (
     <Button asChild variant="solid" color="green">
-      <Link href={role === 'admin' ? '/admin/dashboard' : '/user/dashboard'}>
+      <Link
+        href={role === 'admin' ? ROUTES.ADMIN.DASHBOARD : ROUTES.ADMIN.USERS}
+      >
         {role === 'admin' ? 'Admin Panel' : 'Dashboard'}
       </Link>
     </Button>

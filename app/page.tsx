@@ -1,7 +1,6 @@
+import { ROUTES } from '@/constants'
 import Link from 'next/link'
 import React from 'react'
-import { FiSearch } from 'react-icons/fi'
-import { Button } from '@radix-ui/themes'
 
 export const dynamic = 'force-dynamic'
 
@@ -16,7 +15,7 @@ export default function Home() {
           <li>
             <Link
               className="flex justify-center p-2 text-center"
-              href="/admin/dashboard"
+              href={ROUTES.ADMIN.DASHBOARD}
             >
               - Protected Admin Dashboard
             </Link>
@@ -24,17 +23,9 @@ export default function Home() {
           <li>
             <Link
               className="flex justify-center p-2 text-center"
-              href="/admin/dashboard"
+              href={ROUTES.USER.DASHBOARD}
             >
               - Protected User Dashboard
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="flex justify-center p-2 text-center"
-              href="/doodles"
-            >
-              - Public Doodles
             </Link>
           </li>
         </ul>

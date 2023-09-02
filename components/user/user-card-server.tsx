@@ -8,20 +8,21 @@ export const UserCardServer = ({ session }: { session: Session | null }) => {
   if (!session) return null
 
   return (
-    <Card className="flex items-center justify-center max-w-lg gap-5 lg:max-w-sm lg:items-center lg:flex-col">
+    <div className="flex items-center justify-center w-full gap-5 p-5 lg:items-center lg:flex-col">
       <Avatar
         size="7"
         src={session.user.user_metadata.avatar_url}
         fallback={session.user.user_metadata.name.split('')[0]}
       />
       <div className="space-y-2 lg:text-center">
-        <ul>
-          <li>{session.user.user_metadata.name}</li>
-          <li>divsplashadmin@gmail.com</li>
-          {/* <li>{session.user.user_metadata.email}</li> */}
+        <ul className="text-sm">
+          <li className="flex gap-1">
+            <span>Signed in as</span>
+            <strong>{session.user.user_metadata.name}</strong>
+          </li>
         </ul>
         <AuthButtonSignOut />
       </div>
-    </Card>
+    </div>
   )
 }
