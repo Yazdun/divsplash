@@ -8,7 +8,7 @@ export const UserCardServer = ({ session }: { session: Session | null }) => {
   if (!session) return null
 
   return (
-    <Card className="flex items-center justify-center w-full gap-5 lg:items-center lg:flex-col">
+    <div className="flex items-center justify-center w-full gap-5 p-5 lg:items-center lg:flex-col">
       <Avatar
         size="7"
         src={session.user.user_metadata.avatar_url}
@@ -23,6 +23,6 @@ export const UserCardServer = ({ session }: { session: Session | null }) => {
         </ul>
         <AuthButtonSignOut />
       </div>
-    </Card>
+    </div>
   )
 }

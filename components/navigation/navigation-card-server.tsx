@@ -15,13 +15,10 @@ export const NavigationCardServer = ({
   routes: TNavigationCardServer[]
 }) => {
   return (
-    <Card as="ul" style={{ padding: 0 }} className="text-sm">
+    <ul className="text-sm">
       {routes.map(route => {
         return (
-          <li
-            key={route.title}
-            className="border-b-2 border-zinc-50 last-of-type:border-none"
-          >
+          <li key={route.title} className="border-t-2 border-zinc-50">
             <Link
               className="flex items-center justify-between px-5 py-3 transition-all hover:bg-zinc-50"
               href={route.href}
@@ -32,6 +29,6 @@ export const NavigationCardServer = ({
           </li>
         )
       })}
-    </Card>
+    </ul>
   )
 }
