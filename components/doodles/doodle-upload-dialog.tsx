@@ -6,16 +6,32 @@ import { AiOutlinePlus } from 'react-icons/ai'
 import { FileResponse, UploadImageDndClient } from '../upload-image'
 import { FormProvider, useForm } from 'react-hook-form'
 import { Input, titleValidation } from '../ui'
+import { toast } from 'react-hot-toast'
+import { useRouter } from 'next/navigation'
 
 export const UploadDoodleDialog = () => {
   const methods = useForm()
+  const router = useRouter()
 
   const [files, setFiles] = useState<FileResponse[] | undefined>(undefined)
 
   const handleSubmit = methods.handleSubmit(async data => {
-    console.log(data)
-    console.log(files)
     if (files) {
+      await fetch(`http://localhost:3000/api/doodles`, {
+        method: 'POST',
+        body: JSON.stringify({
+          fileKey: files[0].fileKey,
+          fileUrl: files[0].fileUrl,
+          title: data.title,
+        }),
+      }).then(res => {
+        if (res.ok) {
+          console.log('doodle created')
+          router.refresh()
+        }
+      })
+    } else if (!files) {
+      toast.error('Please upload an image')
     }
   })
 
