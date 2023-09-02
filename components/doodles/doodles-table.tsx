@@ -1,7 +1,7 @@
 import { Button, Table } from '@radix-ui/themes'
 import React from 'react'
 
-export const DoodlesTable = () => {
+export const DoodlesTable = ({ doodles }: { doodles: TDoodle[] }) => {
   return (
     <div className="w-full">
       <Table.Root>
@@ -15,25 +15,16 @@ export const DoodlesTable = () => {
         </Table.Header>
 
         <Table.Body>
-          <Table.Row>
-            <Table.RowHeaderCell>Lorem, ipsum dolor.</Table.RowHeaderCell>
-            <Table.Cell>Time</Table.Cell>
-            <Table.Cell>10</Table.Cell>
-            <Table.Cell>View</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>Lorem, ipsum dolor.</Table.RowHeaderCell>
-            <Table.Cell>Time</Table.Cell>
-            <Table.Cell>10</Table.Cell>
-            <Table.Cell>View</Table.Cell>
-          </Table.Row>
-
-          <Table.Row>
-            <Table.RowHeaderCell>Lorem, ipsum dolor.</Table.RowHeaderCell>
-            <Table.Cell>Time</Table.Cell>
-            <Table.Cell>10</Table.Cell>
-            <Table.Cell>View</Table.Cell>
-          </Table.Row>
+          {doodles.map(doodle => {
+            return (
+              <Table.Row key={doodle.id}>
+                <Table.RowHeaderCell>{doodle.title}</Table.RowHeaderCell>
+                <Table.Cell>{doodle.created_at}</Table.Cell>
+                <Table.Cell>0</Table.Cell>
+                <Table.Cell>View</Table.Cell>
+              </Table.Row>
+            )
+          })}
         </Table.Body>
       </Table.Root>
     </div>
