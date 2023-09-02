@@ -36,6 +36,22 @@ export default function Home() {
               - Public Doodles
             </Link>
           </li>
+          <li>
+            <Link
+              className="flex justify-center p-2 text-center"
+              href="/upload-button"
+            >
+              - upload button
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="flex justify-center p-2 text-center"
+              href="/upload-dnd"
+            >
+              - upload dnd
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

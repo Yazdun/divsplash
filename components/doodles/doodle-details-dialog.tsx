@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { PiDownloadSimpleBold } from 'react-icons/pi'
 import { toast } from 'react-hot-toast'
 
-export const DoodleDialog = () => {
+export const DoodleDetailsDialog = () => {
   return (
     <Dialog.Root>
       <Dialog.Trigger>

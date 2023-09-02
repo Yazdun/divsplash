@@ -18,7 +18,7 @@ module.exports = {
         center: true,
         padding: '1.25rem',
         screens: {
-          '3xl': '1000px',
+          '3xl': '1200px',
         },
       },
       boxShadow: {
