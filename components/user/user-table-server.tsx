@@ -1,27 +1,27 @@
-import { Button, Table } from '@radix-ui/themes'
+import { Table } from '@radix-ui/themes'
 import React from 'react'
 
-export const DoodlesTable = ({ doodles }: { doodles: TDoodle[] }) => {
+export const UsersTableServer = ({ profiles }: { profiles: TProfile[] }) => {
   return (
     <div className="w-full">
       <Table.Root>
         <Table.Header>
           <Table.Row>
-            <Table.ColumnHeaderCell>Title</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Created At</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Username</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Role</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Downloads</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Details</Table.ColumnHeaderCell>
           </Table.Row>
         </Table.Header>
 
         <Table.Body>
-          {doodles.map(doodle => {
+          {profiles.map(profile => {
             return (
-              <Table.Row key={doodle.id}>
+              <Table.Row key={profile.id}>
                 <Table.RowHeaderCell className="font-bold">
-                  {doodle.title}
+                  {profile.name}
                 </Table.RowHeaderCell>
-                <Table.Cell>{doodle.created_at}</Table.Cell>
+                <Table.Cell>{profile.role}</Table.Cell>
                 <Table.Cell>0</Table.Cell>
                 <Table.Cell>-</Table.Cell>
               </Table.Row>
