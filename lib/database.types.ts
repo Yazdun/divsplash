@@ -71,6 +71,34 @@ export interface Database {
           }
         ]
       }
+      profiles: {
+        Row: {
+          avatar_url: string
+          id: string
+          name: string
+          role: string
+        }
+        Insert: {
+          avatar_url: string
+          id: string
+          name: string
+          role?: string
+        }
+        Update: {
+          avatar_url?: string
+          id?: string
+          name?: string
+          role?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "profiles_id_fkey"
+            columns: ["id"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
     }
     Views: {
       [_ in never]: never
