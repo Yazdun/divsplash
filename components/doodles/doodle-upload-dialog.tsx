@@ -23,19 +23,29 @@ export const UploadDoodleDialog = () => {
         </Button>
       </Dialog.Trigger>
 
-      <Dialog.Content style={{ maxWidth: 600, margin: 20 }} className="m-5">
+      <Dialog.Content
+        style={{ maxWidth: 600, margin: 20 }}
+        className="m-5 space-y-4"
+      >
         <Dialog.Title>Create Doodle</Dialog.Title>
         <UploadImageDndClient />
         <FormProvider {...methods}>
-          <form onSubmit={e => e.preventDefault()}>
+          <form className="space-y-4" onSubmit={e => e.preventDefault()}>
             <Input {...titleValidation} />
-            <div className="flex justify-end gap-5">
-              <Button onClick={handleSubmit} type="submit">
-                Create
-              </Button>
+            <div className="flex justify-end gap-2">
               <Dialog.Close>
-                <Button type="submit">Cancel</Button>
+                <Button type="submit" variant="soft" color="gray">
+                  Cancel
+                </Button>
               </Dialog.Close>
+              <Button
+                variant="solid"
+                onClick={handleSubmit}
+                className="flex items-center gap-3"
+              >
+                <AiOutlinePlus />
+                Create Doodle
+              </Button>
             </div>
           </form>
         </FormProvider>

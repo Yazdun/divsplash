@@ -1,13 +1,13 @@
 export const titleValidation = {
-  name: 'name',
-  label: 'title',
+  name: 'title',
+  label: 'Title',
   type: 'text',
-  id: 'name',
+  id: 'title',
   placeholder: 'type something ...',
   validation: {
     required: {
       value: true,
-      message: 'required',
+      message: 'Required',
     },
   },
 }

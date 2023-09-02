@@ -23,17 +23,21 @@ export const Input: FC<InputProps> = ({
   return (
     <div
       className={clsx(
-        'relative flex flex-col w-full gap-2 transition-colors',
-        errors[name!]
-          ? 'focus-within:border-red-600'
-          : 'focus-within:border-zinc-500',
+        'relative flex flex-col items-start w-full gap-1 transition-colors',
       )}
     >
-      <label htmlFor={id}>{label}</label>
+      <label className="font-bold" htmlFor={id}>
+        {label}
+      </label>
       <input
         id={id}
         type={type}
-        className="w-full px-5 py-3 bg-transparent border-2 rounded-md text-zinc-400 placeholder:opacity-50 border-zinc-100 focus:outline-none"
+        className={clsx(
+          'w-full px-5 py-3 bg-transparent border-2 rounded-md placeholder:opacity-50 border-zinc-100 focus:outline-none',
+          errors[name!]
+            ? 'focus-within:border-red-400'
+            : 'focus-within:border-zinc-800',
+        )}
         placeholder={placeholder}
         autoComplete="off"
         {...register(name!, validation)}

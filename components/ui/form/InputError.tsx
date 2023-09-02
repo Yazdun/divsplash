@@ -8,10 +8,10 @@ import { MdOutlineNearbyError } from 'react-icons/md'
 export const InputError: FC<InputErrorProps> = ({ message }) => {
   return (
     <motion.p
-      className="absolute right-0 flex items-center gap-1 text-red-600 w-max"
+      className="absolute right-0 flex items-center gap-1 font-bold text-red-400 w-max"
       {...framerError}
     >
-      <MdOutlineNearbyError />
+      <MdOutlineNearbyError className="mb-[0.2rem]" />
       <span>{message?.toString()}</span>
     </motion.p>
   )
