@@ -1,7 +1,7 @@
 import { Montserrat } from 'next/font/google'
 import '@radix-ui/themes/styles.css'
 import './globals.css'
-import { NavigationServer } from '@/components'
+import { NavigationTopbarServer } from '@/components'
 import { Theme } from '@radix-ui/themes'
 import { Toaster } from 'react-hot-toast'
 import clsx from 'clsx'
@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={clsx(montserrat.className, 'bg-zinc-50')}>
         <Toaster position="bottom-center" reverseOrder={false} />
         <Theme>
-          <NavigationServer />
+          <NavigationTopbarServer />
           {children}
         </Theme>
       </body>
