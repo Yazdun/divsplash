@@ -18,9 +18,12 @@ export const NavigationCardServer = ({
     <Card as="ul" style={{ padding: 0 }} className="text-sm">
       {routes.map(route => {
         return (
-          <li key={route.title}>
+          <li
+            key={route.title}
+            className="border-b-2 border-zinc-50 last-of-type:border-none"
+          >
             <Link
-              className="flex items-center justify-between px-5 py-3 border-b-2 border-zinc-50 hover:bg-zinc-50"
+              className="flex items-center justify-between px-5 py-3 transition-all hover:bg-zinc-50"
               href={route.href}
             >
               {route.title}
