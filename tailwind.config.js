@@ -15,15 +15,12 @@ module.exports = withUt(
             100: '#fafafa',
           },
         },
-        container: {
-          center: true,
-          padding: '1.25rem',
-          screens: {
-            '3xl': '1200px',
-          },
-        },
-        boxShadow: {
-          sm: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+      },
+      container: {
+        center: true,
+        padding: '1.25rem',
+        screens: {
+          '3xl': '1200px',
         },
       },
     },

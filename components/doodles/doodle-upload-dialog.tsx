@@ -8,6 +8,7 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { Input, titleValidation } from '../ui'
 import { toast } from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
+import { ENDPOINT } from '@/constants/endpoint'
 
 export const UploadDoodleDialog = () => {
   const methods = useForm()
@@ -17,7 +18,7 @@ export const UploadDoodleDialog = () => {
 
   const handleSubmit = methods.handleSubmit(async data => {
     if (files) {
-      await fetch(`http://localhost:3000/api/doodles`, {
+      await fetch(`${ENDPOINT}/api/doodles`, {
         method: 'POST',
         body: JSON.stringify({
           fileKey: files[0].fileKey,

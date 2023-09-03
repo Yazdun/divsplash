@@ -6,7 +6,6 @@ import {
   createClientComponentClient,
   Session,
 } from '@supabase/auth-helpers-nextjs'
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
@@ -28,15 +27,7 @@ export function AuthButtonClient({
     })
   }
 
-  return session ? (
-    <Button asChild variant="solid" color="green">
-      <Link
-        href={role === 'admin' ? ROUTES.ADMIN.DASHBOARD : ROUTES.ADMIN.USERS}
-      >
-        {role === 'admin' ? 'Admin Panel' : 'Dashboard'}
-      </Link>
-    </Button>
-  ) : (
+  return (
     <Button variant="solid" color="green" onClick={handleSignIn}>
       Login with Google
     </Button>

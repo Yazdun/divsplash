@@ -1,10 +1,10 @@
 import { Montserrat } from 'next/font/google'
-import '@radix-ui/themes/styles.css'
-import './globals.css'
 import { NavigationTopbarServer } from '@/components'
 import { Theme } from '@radix-ui/themes'
 import { Toaster } from 'react-hot-toast'
 import clsx from 'clsx'
+import '@radix-ui/themes/styles.css'
+import './globals.css'
 
 export const dynamic = 'force-dynamic'
 
