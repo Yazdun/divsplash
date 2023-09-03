@@ -60,7 +60,7 @@ export default async function AdminLayout({
       <h1 className="text-lg font-bold text-center lg:text-left">
         DivSplash Admin Panel 🦁
       </h1>
-      <div className="flex flex-col max-w-lg gap-5 m-auto lg:max-w-full lg:flex-row lg:m-0 lg:items-start">
+      <div className="flex flex-col max-w-lg gap-5 m-auto md:max-w-full lg:flex-row lg:m-0 lg:items-start">
         <Card style={{ padding: 0 }} className="w-full lg:max-w-[250px]">
           <UserCardServer session={session} />
           <NavigationCardServer routes={adminRoutes} />
