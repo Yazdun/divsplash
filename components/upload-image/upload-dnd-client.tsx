@@ -5,7 +5,6 @@
 import { UploadDropzone } from '@uploadthing/react'
 import { OurFileRouter } from '../../app/api/uploadthing/core'
 
-import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 
 export type FileResponse = { fileUrl: string; fileKey: string }
