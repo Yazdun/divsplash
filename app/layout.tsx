@@ -3,8 +3,9 @@ import { NavigationTopbarServer } from '@/components'
 import { Theme } from '@radix-ui/themes'
 import { Toaster } from 'react-hot-toast'
 import clsx from 'clsx'
-import '@radix-ui/themes/styles.css'
+import '@uploadthing/react/styles.css'
 import './globals.css'
+import '@radix-ui/themes/styles.css'
 
 export const dynamic = 'force-dynamic'
 
