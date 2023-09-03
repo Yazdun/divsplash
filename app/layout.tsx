@@ -1,4 +1,4 @@
-import '@uploadthing/react/styles.css'
+// import '@uploadthing/react/styles.css'
 import { Montserrat } from 'next/font/google'
 import { NavigationTopbarServer } from '@/components'
 import clsx from 'clsx'
