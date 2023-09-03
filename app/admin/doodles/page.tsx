@@ -12,7 +12,7 @@ export default async function Doodles() {
   if (!doodles) return null
 
   return (
-    <div className="container flex flex-col items-end gap-5">
+    <div className="flex flex-col items-end w-full gap-5">
       <UploadDoodleDialog />
       <DoodlesTable doodles={doodles.reverse()} />
     </div>

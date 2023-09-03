@@ -12,7 +12,7 @@ export default async function Users() {
   if (!profiles) return null
 
   return (
-    <div className="container text-center">
+    <div className="w-full text-center">
       <UsersTableServer profiles={profiles} />
     </div>
   )
