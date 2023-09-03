@@ -14,7 +14,11 @@ export async function AuthButtonServer() {
     data: { session },
   } = await supabase.auth.getSession()
 
-  const { data: user } = await supabase.from('profiles').select('*').single()
+  const { data: user } = await supabase
+    .from('profiles')
+    .select('*')
+    .eq('id', session?.user.id)
+    .single()
 
   return session ? (
     <Button asChild variant="solid" color="green">

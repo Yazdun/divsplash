@@ -24,6 +24,7 @@ export default async function UserLayout({
   if (!session) {
     redirect('/')
   }
+
   return (
     <main className="container p-5 space-y-5">
       <h1 className="text-lg font-bold text-center lg:text-left">
