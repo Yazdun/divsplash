@@ -78,7 +78,7 @@ export const DoodleDeleteDialog = ({ doodle }: { doodle: TDoodle }) => {
             ) : (
               <>
                 <RiDeleteBin7Line />
-                Create Doodle
+                Delete Doodle
               </>
             )}
           </Button>
