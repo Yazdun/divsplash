@@ -1,4 +1,4 @@
-import { Table } from '@radix-ui/themes'
+import { Avatar, Table } from '@radix-ui/themes'
 import React from 'react'
 
 export const UsersTableServer = ({ profiles }: { profiles: TProfile[] }) => {
@@ -18,8 +18,16 @@ export const UsersTableServer = ({ profiles }: { profiles: TProfile[] }) => {
           {profiles.map(profile => {
             return (
               <Table.Row key={profile.id}>
-                <Table.RowHeaderCell className="font-bold">
-                  {profile.name}
+                <Table.RowHeaderCell className="flex items-center gap-2 font-bold">
+                  <Avatar
+                    size="1"
+                    src={profile.avatar_url.replaceAll('"', '')}
+                    fallback={profile.name.split('')[1]}
+                  />
+
+                  <span className="font-bold">
+                    {profile.name.replaceAll('"', '')}
+                  </span>
                 </Table.RowHeaderCell>
                 <Table.Cell>{profile.role}</Table.Cell>
                 <Table.Cell>0</Table.Cell>

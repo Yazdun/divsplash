@@ -9,15 +9,18 @@ import { Input, titleValidation } from '../ui'
 import { toast } from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
 import { ENDPOINT } from '@/constants/endpoint'
+import { ImSpinner2 } from 'react-icons/im'
 
 export const UploadDoodleDialog = () => {
   const methods = useForm()
   const router = useRouter()
+  const [loading, setLoading] = useState(false)
 
   const [files, setFiles] = useState<FileResponse[] | undefined>(undefined)
 
   const handleSubmit = methods.handleSubmit(async data => {
     if (files) {
+      setLoading(true)
       await fetch(`${ENDPOINT}/api/doodles`, {
         method: 'POST',
         body: JSON.stringify({
@@ -27,8 +30,11 @@ export const UploadDoodleDialog = () => {
         }),
       }).then(res => {
         if (res.ok) {
-          console.log('doodle created')
           router.refresh()
+          toast.success('Doodle created successfully')
+          setFiles(undefined)
+          methods.reset()
+          setLoading(false)
         }
       })
     } else if (!files) {
@@ -61,12 +67,22 @@ export const UploadDoodleDialog = () => {
                 </Button>
               </Dialog.Close>
               <Button
+                disabled={loading}
                 variant="solid"
                 onClick={handleSubmit}
                 className="flex items-center gap-3"
               >
-                <AiOutlinePlus />
-                Create Doodle
+                {loading ? (
+                  <>
+                    <ImSpinner2 className="animate-spin" />
+                    Creating Doodle
+                  </>
+                ) : (
+                  <>
+                    <AiOutlinePlus />
+                    Create Doodle
+                  </>
+                )}
               </Button>
             </div>
           </form>

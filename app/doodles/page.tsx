@@ -5,6 +5,11 @@ import { DoodleDetailsDialog } from '@/components'
 
 export const dynamic = 'force-dynamic'
 
+export const metadata = {
+  title: 'DivSplash — Doodles',
+  description: 'Welcome to DivSplash!',
+}
+
 export default async function Doodles() {
   const supabase = createServerComponentClient<Database>({ cookies })
   const { data: doodles } = await supabase.from('doodles').select()
