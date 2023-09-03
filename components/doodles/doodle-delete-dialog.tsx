@@ -1,12 +1,30 @@
 'use client'
 
+import { ENDPOINT } from '@/constants/endpoint'
 import { Dialog, Button } from '@radix-ui/themes'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import React from 'react'
+import { toast } from 'react-hot-toast'
 
 export const DoodleDeleteDialog = ({ doodle }: { doodle: TDoodle }) => {
+  const [open, setOpen] = React.useState(false)
+
+  const router = useRouter()
+  const handleDelete = async () => {
+    await fetch(`${ENDPOINT}/api/doodles/${doodle.id}`, {
+      method: 'DELETE',
+    }).then(res => {
+      if (res.ok) {
+        router.refresh()
+        toast.success('Doodle deleted successfully')
+        setOpen(false)
+      }
+    })
+  }
+
   return (
-    <Dialog.Root>
+    <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger>
         <Button variant="soft" color="red">
           Delete
@@ -41,7 +59,7 @@ export const DoodleDeleteDialog = ({ doodle }: { doodle: TDoodle }) => {
               Cancel
             </Button>
           </Dialog.Close>
-          <Button variant="solid" color="red">
+          <Button onClick={handleDelete} variant="solid" color="red">
             Delete Doodle
           </Button>
         </div>
