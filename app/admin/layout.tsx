@@ -56,11 +56,10 @@ export default async function AdminLayout({
 
   return (
     <main className="container p-5 space-y-5">
-      <h1 className="text-lg font-bold text-center md:text-left">
-        DivSplash Admin Panel 🦁
-      </h1>
-      <div className="flex flex-col max-w-lg gap-5 m-auto md:max-w-full md:flex-row md:m-0 md:items-start">
-        <Card style={{ padding: 0 }} className="w-full lg:max-w-[250px]">
+      {/* I had to use flex box instead of text align, because of uploadthing css has weird effect on this element! */}
+      <h1 className="text-lg font-bold">DivSplash Admin Panel 🦁</h1>
+      <div className="max-w-lg gap-5 md:max-w-full lg:flex md:items-start">
+        <Card style={{ padding: 0 }} className="w-full lg:max-w-[250px] mb-5">
           <UserCardServer session={session} />
           <NavigationCardServer routes={adminRoutes} />
         </Card>
