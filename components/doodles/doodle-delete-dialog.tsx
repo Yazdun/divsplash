@@ -4,18 +4,23 @@ import { ENDPOINT } from '@/constants/endpoint'
 import { Dialog, Button } from '@radix-ui/themes'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import React from 'react'
+import React, { useState } from 'react'
 import { toast } from 'react-hot-toast'
+import { ImSpinner2 } from 'react-icons/im'
+import { RiDeleteBin7Line } from 'react-icons/ri'
 
 export const DoodleDeleteDialog = ({ doodle }: { doodle: TDoodle }) => {
   const [open, setOpen] = React.useState(false)
+  const [loading, setLoading] = useState(false)
 
   const router = useRouter()
   const handleDelete = async () => {
+    setLoading(true)
     await fetch(`${ENDPOINT}/api/doodles/${doodle.id}`, {
       method: 'DELETE',
     }).then(res => {
       if (res.ok) {
+        setLoading(false)
         router.refresh()
         toast.success('Doodle deleted successfully')
         setOpen(false)
@@ -59,8 +64,23 @@ export const DoodleDeleteDialog = ({ doodle }: { doodle: TDoodle }) => {
               Cancel
             </Button>
           </Dialog.Close>
-          <Button onClick={handleDelete} variant="solid" color="red">
-            Delete Doodle
+          <Button
+            disabled={loading}
+            onClick={handleDelete}
+            variant="solid"
+            color="red"
+          >
+            {loading ? (
+              <>
+                <ImSpinner2 className="animate-spin" />
+                Deleting Doodle
+              </>
+            ) : (
+              <>
+                <RiDeleteBin7Line />
+                Create Doodle
+              </>
+            )}
           </Button>
         </div>
       </Dialog.Content>
