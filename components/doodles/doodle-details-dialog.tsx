@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Button, Dialog } from '@radix-ui/themes'
 import Image from 'next/image'
 import { PiDownloadSimpleBold } from 'react-icons/pi'
-import { toast } from 'react-hot-toast'
+import { toast } from 'react-toastify'
 
 export const DoodleDetailsDialog = ({ doodle }: { doodle: TDoodle }) => {
   return (
@@ -36,7 +36,7 @@ export const DoodleDetailsDialog = ({ doodle }: { doodle: TDoodle }) => {
             variant="solid"
             color="teal"
             size="3"
-            onClick={() => toast.error('Feature not available yet')}
+            onClick={() => toast('Feature not available yet')}
           >
             <PiDownloadSimpleBold />
             Download
