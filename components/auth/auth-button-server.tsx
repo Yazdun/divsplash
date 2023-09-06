@@ -1,5 +1,5 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { AuthButtonClient } from '@/components'
+import { AuthDialogClient } from '@/components'
 import { cookies } from 'next/headers'
 import { ROUTES } from '@/constants'
 import Link from 'next/link'
@@ -21,7 +21,7 @@ export async function AuthButtonServer() {
     .single()
 
   return session ? (
-    <Button asChild variant="solid" color="green">
+    <Button asChild variant="solid" color="gray" highContrast>
       <Link
         href={
           user?.role === 'admin' ? ROUTES.ADMIN.DASHBOARD : ROUTES.ADMIN.USERS
@@ -31,6 +31,6 @@ export async function AuthButtonServer() {
       </Link>
     </Button>
   ) : (
-    <AuthButtonClient role={user?.role} session={session} />
+    <AuthDialogClient />
   )
 }

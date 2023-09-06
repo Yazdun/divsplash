@@ -1,7 +1,7 @@
 'use client'
 
-import { ROUTES } from '@/constants'
 import { Button } from '@radix-ui/themes'
+import { FaGoogle } from 'react-icons/fa'
 import {
   createClientComponentClient,
   Session,
@@ -9,13 +9,7 @@ import {
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
-export function AuthButtonClient({
-  session,
-  role,
-}: {
-  session: Session | null
-  role: string | undefined
-}) {
+export function AuthButtonClient() {
   const supabase = createClientComponentClient<Database>()
 
   const handleSignIn = async () => {
@@ -28,7 +22,14 @@ export function AuthButtonClient({
   }
 
   return (
-    <Button variant="solid" color="green" onClick={handleSignIn}>
+    <Button
+      variant="solid"
+      size="3"
+      color="gray"
+      highContrast
+      onClick={handleSignIn}
+    >
+      <FaGoogle />
       Login with Google
     </Button>
   )
