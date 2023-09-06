@@ -31,10 +31,10 @@ export default function RootLayout({
           position="bottom-center"
           icon={false}
           autoClose={5000}
-          hideProgressBar={true}
           newestOnTop={true}
           closeOnClick
           pauseOnFocusLoss
+          hideProgressBar
           closeButton={false}
           pauseOnHover
           theme="dark"
