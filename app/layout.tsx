@@ -3,11 +3,9 @@ import { NavigationTopbarServer } from '@/components'
 import clsx from 'clsx'
 import { Theme } from '@radix-ui/themes'
 import { Toaster } from 'react-hot-toast'
-import 'react-toastify/dist/ReactToastify.css'
 import '@uploadthing/react/styles.css'
 import './globals.css'
 import '@radix-ui/themes/styles.css'
-import { ToastContainer } from 'react-toastify'
 
 export const dynamic = 'force-dynamic'
 
@@ -26,19 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx(montserrat.className, 'bg-zinc-50')}>
-        <Toaster position="bottom-center" reverseOrder={false} />
-        <ToastContainer
+        <Toaster
           position="bottom-center"
-          icon={false}
-          autoClose={5000}
-          newestOnTop={true}
-          closeOnClick
-          pauseOnFocusLoss
-          hideProgressBar
-          closeButton={false}
-          pauseOnHover
-          theme="dark"
+          reverseOrder={false}
+          toastOptions={{ style: { background: 'black', color: 'white' } }}
         />
+
         <Theme>
           <NavigationTopbarServer />
           {children}

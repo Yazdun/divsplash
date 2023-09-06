@@ -4,8 +4,7 @@ import React, { useState } from 'react'
 import { Button, Dialog } from '@radix-ui/themes'
 import Image from 'next/image'
 import { PiDownloadSimpleBold } from 'react-icons/pi'
-import { toast } from 'react-toastify'
-import { ToastMessage } from '../toast'
+import { toast } from 'react-hot-toast'
 
 export const DoodleDetailsDialog = ({ doodle }: { doodle: TDoodle }) => {
   return (
@@ -38,30 +37,7 @@ export const DoodleDetailsDialog = ({ doodle }: { doodle: TDoodle }) => {
             color="teal"
             size="3"
             onClick={() => {
-              toast(
-                <ToastMessage
-                  variant="info"
-                  message="Feature not implemented yet"
-                />,
-              )
-              toast(
-                <ToastMessage
-                  variant="success"
-                  message="Feature not implemented yet"
-                />,
-              )
-              toast(
-                <ToastMessage
-                  variant="error"
-                  message="Feature not implemented yet"
-                />,
-              )
-              toast(
-                <ToastMessage
-                  variant="warning"
-                  message="Feature not implemented yet"
-                />,
-              )
+              toast.error('Feature not implemented yet')
             }}
           >
             <PiDownloadSimpleBold />
