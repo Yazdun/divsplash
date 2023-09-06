@@ -15,9 +15,13 @@ export default async function Doodles() {
   const { data: doodles } = await supabase.from('doodles').select()
 
   return (
-    <ul className="container grid gap-5 p-5 md:grid-cols-2 lg:grid-cols-4">
+    <ul className="container grid gap-2 p-5 md:grid-cols-3 lg:grid-cols-5">
       {doodles?.map(doodle => {
-        return <DoodleDetailsDialog key={doodle.id} doodle={doodle} />
+        return (
+          <li key={doodle.id} className="w-full">
+            <DoodleDetailsDialog doodle={doodle} />
+          </li>
+        )
       })}
     </ul>
   )
