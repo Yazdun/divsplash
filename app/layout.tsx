@@ -28,14 +28,14 @@ export default function RootLayout({
       <body className={clsx(montserrat.className, 'bg-zinc-50')}>
         <Toaster position="bottom-center" reverseOrder={false} />
         <ToastContainer
-          position="bottom-right"
+          position="bottom-center"
           icon={false}
           autoClose={5000}
           hideProgressBar={true}
           newestOnTop={true}
           closeOnClick
-          rtl={true}
           pauseOnFocusLoss
+          closeButton={false}
           pauseOnHover
           theme="dark"
         />
