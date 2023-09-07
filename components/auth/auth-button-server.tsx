@@ -4,6 +4,7 @@ import { cookies } from 'next/headers'
 import { ROUTES } from '@/constants'
 import Link from 'next/link'
 import { Button } from '@radix-ui/themes'
+import { AiOutlinePlus } from 'react-icons/ai'
 
 export const dynamic = 'force-dynamic'
 
@@ -31,6 +32,18 @@ export async function AuthButtonServer() {
       </Link>
     </Button>
   ) : (
-    <AuthDialogClient />
+    <AuthDialogClient
+      triggerComponent={
+        <Button
+          variant="solid"
+          color="gray"
+          highContrast
+          className="flex items-center gap-3"
+        >
+          <AiOutlinePlus />
+          Join DivSplash
+        </Button>
+      }
+    />
   )
 }
