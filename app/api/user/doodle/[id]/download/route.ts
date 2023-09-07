@@ -12,7 +12,9 @@ export async function POST(
     data: { session },
   } = await supabase.auth.getSession()
 
-  console.log(params)
+  if (!session) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
 
   const { data } = await supabase
     .from('downloads')
