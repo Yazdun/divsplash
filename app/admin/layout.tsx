@@ -4,7 +4,7 @@ import { cookies } from 'next/headers'
 import { Card, NavigationCardServer, UserCardServer } from '@/components'
 import type { TNavigationCardServer } from '@/components'
 import { RxDashboard } from 'react-icons/rx'
-import { FiUsers } from 'react-icons/fi'
+import { FiDownloadCloud, FiUsers } from 'react-icons/fi'
 import { BsFolder } from 'react-icons/bs'
 import { ROUTES } from '@/constants'
 
@@ -30,6 +30,11 @@ const adminRoutes: TNavigationCardServer[] = [
     title: 'Doodles',
     href: ROUTES.ADMIN.DOODLES,
     icon: BsFolder,
+  },
+  {
+    title: 'Downloads',
+    href: ROUTES.ADMIN.DOWNLOADS,
+    icon: FiDownloadCloud,
   },
 ]
 

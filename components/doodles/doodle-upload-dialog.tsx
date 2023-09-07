@@ -21,7 +21,7 @@ export const UploadDoodleDialog = () => {
   const handleSubmit = methods.handleSubmit(async data => {
     if (files) {
       setLoading(true)
-      await fetch(`${ENDPOINT}/api/doodles`, {
+      await fetch(`${ENDPOINT}/api/admin/doodles`, {
         method: 'POST',
         body: JSON.stringify({
           fileKey: files[0].fileKey,

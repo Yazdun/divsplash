@@ -1,9 +1,10 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { AuthButtonClient } from '@/components'
+import { AuthDialogClient } from '@/components'
 import { cookies } from 'next/headers'
 import { ROUTES } from '@/constants'
 import Link from 'next/link'
 import { Button } from '@radix-ui/themes'
+import { AiOutlinePlus } from 'react-icons/ai'
 
 export const dynamic = 'force-dynamic'
 
@@ -21,16 +22,30 @@ export async function AuthButtonServer() {
     .single()
 
   return session ? (
-    <Button asChild variant="solid" color="green">
+    <Button asChild variant="solid" color="gray" highContrast>
       <Link
         href={
-          user?.role === 'admin' ? ROUTES.ADMIN.DASHBOARD : ROUTES.ADMIN.USERS
+          user?.role === 'admin'
+            ? ROUTES.ADMIN.DASHBOARD
+            : ROUTES.USER.DASHBOARD
         }
       >
         {user?.role === 'admin' ? 'Admin Panel' : 'Dashboard'}
       </Link>
     </Button>
   ) : (
-    <AuthButtonClient role={user?.role} session={session} />
+    <AuthDialogClient
+      triggerComponent={
+        <Button
+          variant="solid"
+          color="gray"
+          highContrast
+          className="flex items-center gap-3"
+        >
+          <AiOutlinePlus />
+          Join DivSplash
+        </Button>
+      }
+    />
   )
 }

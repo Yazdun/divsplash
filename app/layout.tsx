@@ -24,7 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx(montserrat.className, 'bg-zinc-50')}>
-        <Toaster position="bottom-center" reverseOrder={false} />
+        <Toaster
+          position="bottom-center"
+          reverseOrder={false}
+          toastOptions={{ style: { background: 'black', color: 'white' } }}
+        />
+
         <Theme>
           <NavigationTopbarServer />
           {children}
