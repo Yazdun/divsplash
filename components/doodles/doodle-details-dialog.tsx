@@ -1,12 +1,31 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Dialog } from '@radix-ui/themes'
 import Image from 'next/image'
 import { PiDownloadSimpleBold } from 'react-icons/pi'
 import { toast } from 'react-hot-toast'
+import { ENDPOINT } from '@/constants/endpoint'
+import { ImSpinner2 } from 'react-icons/im'
 
 export const DoodleDetailsDialog = ({ doodle }: { doodle: TDoodle }) => {
+  const [loading, setLoading] = useState(false)
+
+  const handleDownload = async () => {
+    setLoading(true)
+    await fetch(`${ENDPOINT}/api/user/doodle/${doodle.id}/download`, {
+      method: 'POST',
+    }).then(res => {
+      if (res.ok) {
+        toast.success('Added to downloads')
+        setLoading(false)
+      } else {
+        toast.error("Couldn't download doodle")
+        setLoading(false)
+      }
+    })
+  }
+
   return (
     <Dialog.Root>
       <Dialog.Trigger>
@@ -20,13 +39,11 @@ export const DoodleDetailsDialog = ({ doodle }: { doodle: TDoodle }) => {
 
       <Dialog.Content style={{ maxWidth: 400 }} className="m-5">
         <Dialog.Title>{doodle.title}</Dialog.Title>
-        <Dialog.Description size="2" mb="4">
-          <div className="flex justify-center w-full p-5 border-2 border-dashed rounded-md">
-            <Image src={doodle.fileUrl} alt="hello" width={200} height={200} />
-          </div>
-        </Dialog.Description>
+        <div className="flex justify-center w-full p-5 border-2 border-dashed rounded-md">
+          <Image src={doodle.fileUrl} alt="hello" width={200} height={200} />
+        </div>
 
-        <div className="flex justify-end gap-3">
+        <div className="flex justify-end gap-3 mt-5">
           <Dialog.Close>
             <Button variant="soft" size="3" color="gray">
               Cancel
@@ -36,12 +53,22 @@ export const DoodleDetailsDialog = ({ doodle }: { doodle: TDoodle }) => {
             variant="solid"
             color="green"
             size="3"
+            disabled={loading}
             onClick={() => {
-              toast.error('Feature not implemented yet')
+              handleDownload()
             }}
           >
-            <PiDownloadSimpleBold />
-            Download
+            {loading ? (
+              <>
+                <ImSpinner2 className="animate-spin" />
+                Starting download
+              </>
+            ) : (
+              <>
+                <PiDownloadSimpleBold />
+                Download
+              </>
+            )}
           </Button>
         </div>
       </Dialog.Content>
