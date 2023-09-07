@@ -7,6 +7,7 @@ export const ROUTES = {
   },
   USER: {
     DASHBOARD: '/user/dashboard',
+    LIKES: '/user/likes',
   },
   PUBLIC: {
     DOODLES: '/doodles',

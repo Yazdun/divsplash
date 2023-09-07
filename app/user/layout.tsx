@@ -20,13 +20,13 @@ export const metadata = {
 
 const userRoutes: TNavigationCardServer[] = [
   {
-    title: 'Downloaded doodles',
-    href: ROUTES.ADMIN.DOWNLOADS,
+    title: 'Downloaded Doodles',
+    href: ROUTES.USER.DASHBOARD,
     icon: FiDownloadCloud,
   },
   {
     title: 'Liked Doodles',
-    href: ROUTES.ADMIN.DOODLES,
+    href: ROUTES.USER.LIKES,
     icon: BsHeart,
   },
 ]
