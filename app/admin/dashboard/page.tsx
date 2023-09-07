@@ -10,6 +10,7 @@ export default async function Dashboard() {
 
   const { data: doodles } = await supabase.from('doodles').select('*')
   const { data: profiles } = await supabase.from('profiles').select('*')
+  const { data: downloads } = await supabase.from('downloads').select('*')
 
   return (
     <div className="grid w-full gap-2 lg:grid-cols-3">
@@ -22,7 +23,8 @@ export default async function Dashboard() {
         <h2>Total users</h2>
       </Card>
       <Card className="flex flex-col items-center justify-center gap-5 text-xl font-bold text-center">
-        0<h2>Total Download</h2>
+        <p>{downloads?.length}</p>
+        <h2>Total Download</h2>
       </Card>
     </div>
   )
