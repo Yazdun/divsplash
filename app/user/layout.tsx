@@ -51,7 +51,10 @@ export default async function UserLayout({
       {/* I had to use flex box instead of text align, because of uploadthing css has weird effect on this element! */}
       <h1 className="text-lg font-bold">DivSplash User Panel 💻</h1>
       <div className="max-w-lg gap-5 md:max-w-full lg:flex md:items-start">
-        <Card style={{ padding: 0 }} className="w-full lg:max-w-[250px] mb-5">
+        <Card
+          style={{ padding: 0 }}
+          className="w-full lg:max-w-[250px] mb-5 sticky top-20"
+        >
           <UserCardServer session={session} />
           <NavigationCardServer routes={userRoutes} />
         </Card>
