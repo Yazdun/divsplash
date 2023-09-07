@@ -25,7 +25,9 @@ export async function AuthButtonServer() {
     <Button asChild variant="solid" color="gray" highContrast>
       <Link
         href={
-          user?.role === 'admin' ? ROUTES.ADMIN.DASHBOARD : ROUTES.ADMIN.USERS
+          user?.role === 'admin'
+            ? ROUTES.ADMIN.DASHBOARD
+            : ROUTES.USER.DASHBOARD
         }
       >
         {user?.role === 'admin' ? 'Admin Panel' : 'Dashboard'}
