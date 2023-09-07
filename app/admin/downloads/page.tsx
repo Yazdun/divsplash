@@ -1,4 +1,4 @@
-import { Card, UsersTableServer } from '@/components'
+import { Card, DownloadsTable, UsersTableServer } from '@/components'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import React from 'react'
 import { cookies } from 'next/headers'
@@ -9,12 +9,21 @@ export default async function Users() {
   const supabase = createServerComponentClient<Database>({ cookies })
   const { data } = await supabase
     .from('downloads')
-    .select('*, profile: profiles(*)')
+    .select('*, profile: profiles(*),doodle: doodles(*)')
     .order('created_at', { ascending: false })
 
   if (!data) return null
 
-  return (
-    <div className="w-full text-center">{JSON.stringify(data, null, 2)}</div>
-  )
+  const downloads =
+    data?.map(download => ({
+      ...download,
+      userProfile: Array.isArray(download.profile)
+        ? download.profile[0]
+        : download.profile,
+      downloadedDoddle: Array.isArray(download.doodle)
+        ? download.doodle[0]
+        : download.doodle,
+    })) ?? []
+
+  return <DownloadsTable downloads={downloads} />
 }
