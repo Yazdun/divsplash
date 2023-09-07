@@ -1,12 +1,7 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import React from 'react'
 import { cookies } from 'next/headers'
-import {
-  AuthDialogClient,
-  DoodleAuthDialog,
-  DoodleDetailsDialog,
-} from '@/components'
-import Image from 'next/image'
+import { DoodleAuthDialog, DoodleDetailsDialog } from '@/components'
 
 export const dynamic = 'force-dynamic'
 
@@ -24,7 +19,7 @@ export default async function Doodles() {
   } = await supabase.auth.getSession()
 
   return (
-    <ul className="container grid gap-2 p-5 md:grid-cols-3 lg:grid-cols-5">
+    <ul className="container grid gap-2 p-5 md:grid-cols-3 lg:grid-cols-4">
       {doodles?.map(doodle => {
         return (
           <li key={doodle.id} className="w-full">
