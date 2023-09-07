@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { Button, Dialog } from '@radix-ui/themes'
 import Image from 'next/image'
 import { PiDownloadSimpleBold } from 'react-icons/pi'
@@ -34,7 +34,7 @@ export const DoodleDetailsDialog = ({ doodle }: { doodle: TDoodle }) => {
           </Dialog.Close>
           <Button
             variant="solid"
-            color="teal"
+            color="green"
             size="3"
             onClick={() => {
               toast.error('Feature not implemented yet')
