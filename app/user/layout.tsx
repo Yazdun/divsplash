@@ -8,7 +8,7 @@ import {
   UserCardServer,
 } from '@/components'
 import { ROUTES } from '@/constants'
-import { BsFolder, BsHeart } from 'react-icons/bs'
+import { BsHeart } from 'react-icons/bs'
 import { FiDownloadCloud } from 'react-icons/fi'
 
 export const dynamic = 'force-dynamic'
