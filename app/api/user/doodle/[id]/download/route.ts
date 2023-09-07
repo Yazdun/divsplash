@@ -20,5 +20,5 @@ export async function POST(
     .from('downloads')
     .insert({ user_id: session?.user.id, doodle_id: params.id })
 
-  return NextResponse.json({ data: params.id })
+  return NextResponse.json({ data })
 }

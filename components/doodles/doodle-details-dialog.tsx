@@ -11,6 +11,19 @@ import { ImSpinner2 } from 'react-icons/im'
 export const DoodleDetailsDialog = ({ doodle }: { doodle: TDoodle }) => {
   const [loading, setLoading] = useState(false)
 
+  async function downloadImage() {
+    const image = await fetch(doodle.fileUrl)
+    const imageBlog = await image.blob()
+    const imageURL = URL.createObjectURL(imageBlog)
+
+    const link = document.createElement('a')
+    link.href = imageURL
+    link.download = doodle.title
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   const handleDownload = async () => {
     setLoading(true)
     await fetch(`${ENDPOINT}/api/user/doodle/${doodle.id}/download`, {
@@ -18,6 +31,7 @@ export const DoodleDetailsDialog = ({ doodle }: { doodle: TDoodle }) => {
     }).then(res => {
       if (res.ok) {
         toast.success('Added to downloads')
+        downloadImage()
         setLoading(false)
       } else {
         toast.error("Couldn't download doodle")
