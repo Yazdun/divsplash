@@ -42,14 +42,22 @@ export const DoodleDetailsDialog = ({ doodle }: { doodle: TDoodle }) => {
 
   return (
     <Dialog.Root>
-      <Dialog.Trigger>
-        <button className="flex flex-col items-center justify-between w-full gap-2 p-5 text-center bg-white border-2 rounded-md border-zinc-100">
-          <div className="h-[200px] w-full flex justify-center items-center">
-            <Image src={doodle.fileUrl} alt="hello" width={200} height={200} />
-          </div>
-          <h2 className="font-bold">{doodle.title}</h2>
-        </button>
-      </Dialog.Trigger>
+      <div className="bg-white border-2 rounded-md border-zinc-100">
+        <Dialog.Trigger>
+          <button className="flex flex-col items-center justify-between w-full gap-2 p-5 text-center">
+            <div className="h-[200px] w-full flex justify-center items-center">
+              <Image
+                src={doodle.fileUrl}
+                alt="hello"
+                width={200}
+                height={200}
+              />
+            </div>
+            <h2 className="font-bold">{doodle.title}</h2>
+          </button>
+        </Dialog.Trigger>
+        <div className="px-5 py-3 border-t-2 border-zinc-100">Like</div>
+      </div>
 
       <Dialog.Content style={{ maxWidth: 400 }} className="m-5">
         <Dialog.Title>{doodle.title}</Dialog.Title>
