@@ -14,6 +14,8 @@ export const DoodleDetailsDialog = ({
 }: {
   doodle: TDoodleWithStats
 }) => {
+  console.log(doodle)
+
   const [loading, setLoading] = useState(false)
 
   async function downloadImage() {
@@ -62,7 +64,7 @@ export const DoodleDetailsDialog = ({
           </button>
         </Dialog.Trigger>
         <div className="px-5 py-3 border-t-2 border-zinc-100">
-          <LikeDoodleClient />
+          <LikeDoodleClient doodle={doodle} />
         </div>
       </div>
 

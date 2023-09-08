@@ -12,9 +12,7 @@ export const metadata = {
 
 export default async function DoodlesPage() {
   const supabase = createServerComponentClient<Database>({ cookies })
-  const { data } = await supabase
-    .from('doodles')
-    .select('*, user: profiles(*), likes(user_id)')
+  const { data } = await supabase.from('doodles').select('*, likes(user_id)')
 
   const {
     data: { session },
@@ -23,7 +21,6 @@ export default async function DoodlesPage() {
   const doodles =
     data?.map(doodle => ({
       ...doodle,
-      user: Array.isArray(doodle.user) ? doodle.user[0] : doodle.user,
       user_has_liked_doodle: session
         ? !!doodle.likes.find(like => like.user_id === session.user.id)
         : false,
