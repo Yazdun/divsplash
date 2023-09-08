@@ -7,7 +7,7 @@ type DownloadWithInformation = TDownload & {
   downloadedDoddle: TDoodle
 }
 
-export const DownloadsTable = ({
+export const DownloadsTableServer = ({
   downloads,
 }: {
   downloads: DownloadWithInformation[]

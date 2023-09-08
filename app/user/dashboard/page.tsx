@@ -1,7 +1,7 @@
 import React from 'react'
 import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { Card, DoodlesTable, DownloadsTable } from '@/components'
+import { Card, DownloadsTableServer } from '@/components'
 
 export const dynamic = 'force-dynamic'
 
@@ -31,5 +31,5 @@ export default async function Dashboard() {
         : download.doodle,
     })) ?? []
 
-  return <DownloadsTable downloads={downloads} />
+  return <DownloadsTableServer downloads={downloads} />
 }

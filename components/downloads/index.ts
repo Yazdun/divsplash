@@ -1,1 +1,1 @@
-export * from './donwloads-table'
+export * from './donwloads-table-server'

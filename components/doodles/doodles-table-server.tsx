@@ -3,7 +3,7 @@ import React from 'react'
 import { DoodleDeleteDialog } from './doodle-delete-dialog'
 import dayjs from 'dayjs'
 
-export const DoodlesTable = ({ doodles }: { doodles: TDoodle[] }) => {
+export const DoodlesTableServer = ({ doodles }: { doodles: TDoodle[] }) => {
   return (
     <div className="w-full">
       <Table.Root>
