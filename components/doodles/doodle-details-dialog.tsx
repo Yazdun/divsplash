@@ -14,8 +14,6 @@ export const DoodleDetailsDialog = ({
 }: {
   doodle: TDoodleWithStats
 }) => {
-  console.log(doodle)
-
   const [loading, setLoading] = useState(false)
 
   async function downloadImage() {
