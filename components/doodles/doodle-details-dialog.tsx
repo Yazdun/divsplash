@@ -7,8 +7,13 @@ import { PiDownloadSimpleBold } from 'react-icons/pi'
 import { toast } from 'react-hot-toast'
 import { ENDPOINT } from '@/constants/endpoint'
 import { ImSpinner2 } from 'react-icons/im'
+import { LikeDoodleClient } from '../like'
 
-export const DoodleDetailsDialog = ({ doodle }: { doodle: TDoodle }) => {
+export const DoodleDetailsDialog = ({
+  doodle,
+}: {
+  doodle: TDoodleWithStats
+}) => {
   const [loading, setLoading] = useState(false)
 
   async function downloadImage() {
@@ -56,7 +61,9 @@ export const DoodleDetailsDialog = ({ doodle }: { doodle: TDoodle }) => {
             <h2 className="font-bold">{doodle.title}</h2>
           </button>
         </Dialog.Trigger>
-        <div className="px-5 py-3 border-t-2 border-zinc-100">Like</div>
+        <div className="px-5 py-3 border-t-2 border-zinc-100">
+          <LikeDoodleClient />
+        </div>
       </div>
 
       <Dialog.Content style={{ maxWidth: 400 }} className="m-5">

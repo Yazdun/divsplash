@@ -9,4 +9,9 @@ declare global {
   type TDoodle = Doodle
   type TProfile = Profile
   type TDownload = Download
+  type TDoodleWithStats = Doodle & {
+    user: Profile | undefined
+    likes: number
+    user_has_liked_doodle: boolean
+  }
 }

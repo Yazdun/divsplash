@@ -10,13 +10,25 @@ export const metadata = {
   description: 'Welcome to DivSplash!',
 }
 
-export default async function Doodles() {
+export default async function DoodlesPage() {
   const supabase = createServerComponentClient<Database>({ cookies })
-  const { data: doodles } = await supabase.from('doodles').select()
+  const { data } = await supabase
+    .from('doodles')
+    .select('*, user: profiles(*), likes(user_id)')
 
   const {
     data: { session },
   } = await supabase.auth.getSession()
+
+  const doodles =
+    data?.map(doodle => ({
+      ...doodle,
+      user: Array.isArray(doodle.user) ? doodle.user[0] : doodle.user,
+      user_has_liked_doodle: session
+        ? !!doodle.likes.find(like => like.user_id === session.user.id)
+        : false,
+      likes: doodle.likes.length,
+    })) ?? []
 
   return (
     <ul className="container grid gap-2 p-5 md:grid-cols-3 lg:grid-cols-4">
