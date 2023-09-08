@@ -3,9 +3,9 @@ import { BsHeart } from 'react-icons/bs'
 
 export const LikeDoodleClient = ({ doodle }: { doodle: TDoodleWithStats }) => {
   return (
-    <div className="flex items-center gap-1">
+    <button className="flex items-center gap-1 px-3 py-1 text-sm border-2 rounded-xl border-zinc-100">
       <BsHeart />
       {doodle.likes}
-    </div>
+    </button>
   )
 }

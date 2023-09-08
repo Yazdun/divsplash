@@ -63,7 +63,7 @@ export const DoodleDetailsDialog = ({
             <h2 className="font-bold">{doodle.title}</h2>
           </button>
         </Dialog.Trigger>
-        <div className="px-5 py-3 border-t-2 border-zinc-100">
+        <div className="px-5 py-2 border-t-2 border-zinc-100">
           <LikeDoodleClient doodle={doodle} />
         </div>
       </div>
