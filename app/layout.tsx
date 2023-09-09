@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx('bg-zinc-50 text-neutral-700')}>
+      <body className={clsx('text-neutral-700')}>
         <Toaster
           position="bottom-center"
           reverseOrder={false}

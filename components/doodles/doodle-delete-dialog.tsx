@@ -31,7 +31,7 @@ export const DoodleDeleteDialog = ({ doodle }: { doodle: TDoodle }) => {
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger>
-        <Button variant="soft" color="red">
+        <Button variant="soft" color="crimson">
           Delete
         </Button>
       </Dialog.Trigger>
@@ -53,7 +53,7 @@ export const DoodleDeleteDialog = ({ doodle }: { doodle: TDoodle }) => {
             />
           </div>
           <p>
-            Are you sure? This doodle will no longer be accessible and any
+            Are you sure? {doodle.title} will no longer be accessible and any
             existing downloads will be removed.
           </p>
         </div>

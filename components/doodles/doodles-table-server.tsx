@@ -12,7 +12,7 @@ export const DoodlesTableServer = ({ doodles }: { doodles: TDoodle[] }) => {
             <Table.ColumnHeaderCell>Title</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Created At</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Downloads</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Details</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Likes</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Actions</Table.ColumnHeaderCell>
           </Table.Row>
         </Table.Header>
@@ -21,14 +21,14 @@ export const DoodlesTableServer = ({ doodles }: { doodles: TDoodle[] }) => {
           {doodles.map(doodle => {
             return (
               <Table.Row key={doodle.id}>
-                <Table.RowHeaderCell className="font-bold">
-                  {doodle.title}
+                <Table.RowHeaderCell>
+                  <strong>{doodle.title}</strong>
                 </Table.RowHeaderCell>
                 <Table.Cell>
                   {dayjs(doodle.created_at).format('DD MMMM YYYY')}
                 </Table.Cell>
                 <Table.Cell>0</Table.Cell>
-                <Table.Cell>-</Table.Cell>
+                <Table.Cell>0</Table.Cell>
                 <Table.Cell>
                   <DoodleDeleteDialog doodle={doodle} />
                 </Table.Cell>

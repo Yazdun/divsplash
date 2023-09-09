@@ -22,7 +22,7 @@ export async function LandingHeroServer() {
     .single()
 
   return (
-    <div className="flex items-center justify-center h-[94vh] bg-white">
+    <div className="flex items-center justify-center h-[87vh]">
       <div className="flex flex-col items-center gap-5 p-5 text-center ">
         <h1 className="text-4xl font-black md:text-5xl">
           <span className="text-zinc-300">{'< '}</span>
