@@ -8,11 +8,14 @@ import { toast } from 'react-hot-toast'
 import { ENDPOINT } from '@/constants/endpoint'
 import { ImSpinner2 } from 'react-icons/im'
 import { LikeDoodleClient } from '../like'
+import { Session } from '@supabase/supabase-js'
 
 export const DoodleDetailsDialog = ({
   doodle,
+  session,
 }: {
   doodle: TDoodleWithStats
+  session: Session | undefined
 }) => {
   const [loading, setLoading] = useState(false)
 
@@ -53,7 +56,7 @@ export const DoodleDetailsDialog = ({
             <div className="h-[200px] w-full flex justify-center items-center">
               <Image
                 src={doodle.fileUrl}
-                alt="hello"
+                alt={doodle.title}
                 width={200}
                 height={200}
               />
