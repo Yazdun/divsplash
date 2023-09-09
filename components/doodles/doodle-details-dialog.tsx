@@ -9,6 +9,7 @@ import { ENDPOINT } from '@/constants/endpoint'
 import { ImSpinner2 } from 'react-icons/im'
 import { LikeDoodleClient } from '../like'
 import { Session } from '@supabase/supabase-js'
+import { DoodleAuthDialog } from './doodle-auth-dialog'
 
 export const DoodleDetailsDialog = ({
   doodle,

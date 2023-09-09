@@ -1,6 +1,9 @@
 'use client'
 
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import {
+  Session,
+  createClientComponentClient,
+} from '@supabase/auth-helpers-nextjs'
 import clsx from 'clsx'
 import { AnimatePresence } from 'framer-motion'
 import React, { useState } from 'react'

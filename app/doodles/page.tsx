@@ -32,10 +32,14 @@ export default async function DoodlesPage() {
       {doodles?.map(doodle => {
         return (
           <li key={doodle.id} className="w-full">
-            <DoodleDetailsDialog
-              doodle={doodle}
-              session={session || undefined}
-            />
+            {session ? (
+              <DoodleDetailsDialog
+                doodle={doodle}
+                session={session || undefined}
+              />
+            ) : (
+              <DoodleAuthDialog doodle={doodle} />
+            )}
           </li>
         )
       })}
