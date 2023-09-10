@@ -14,11 +14,6 @@ export const NavigationTopbarServer = () => {
         </Link>
 
         <div className="flex items-center gap-5 text-sm">
-          <Button size="2" highContrast color="gray" variant="ghost" asChild>
-            <Link href={ROUTES.PUBLIC.DOODLES} className="font-semibold">
-              Browse Doodles
-            </Link>
-          </Button>
           <AuthButtonServer />
         </div>
       </div>

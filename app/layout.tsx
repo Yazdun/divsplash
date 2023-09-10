@@ -1,4 +1,3 @@
-import { Montserrat } from 'next/font/google'
 import { NavigationTopbarServer } from '@/components'
 import clsx from 'clsx'
 import { Theme } from '@radix-ui/themes'
@@ -8,8 +7,6 @@ import './globals.css'
 import '@radix-ui/themes/styles.css'
 
 export const dynamic = 'force-dynamic'
-
-const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'DivSplash — Homepage ',
@@ -23,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx(montserrat.className, 'bg-zinc-50')}>
+      <body className={clsx('text-neutral-700')}>
         <Toaster
           position="bottom-center"
           reverseOrder={false}

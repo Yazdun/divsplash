@@ -1,4 +1,4 @@
-import { DoodlesTable, UploadDoodleDialog } from '@/components'
+import { DoodlesTableServer, UploadDoodleDialog } from '@/components'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import React from 'react'
 import { cookies } from 'next/headers'
@@ -14,7 +14,7 @@ export default async function Doodles() {
   return (
     <div className="flex flex-col items-end w-full gap-5">
       <UploadDoodleDialog />
-      <DoodlesTable doodles={doodles.reverse()} />
+      <DoodlesTableServer doodles={doodles.reverse()} />
     </div>
   )
 }

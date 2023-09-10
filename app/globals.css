@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.radix-themes {
-  --default-font-family: 'Inter', sans-serif;
-}
-
 ::-webkit-scrollbar {
   width: 4px;
   background: #d6d6d6;

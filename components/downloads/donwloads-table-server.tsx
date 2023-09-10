@@ -1,4 +1,5 @@
 import { Avatar, Table } from '@radix-ui/themes'
+import dayjs from 'dayjs'
 import React from 'react'
 
 type DownloadWithInformation = TDownload & {
@@ -6,7 +7,7 @@ type DownloadWithInformation = TDownload & {
   downloadedDoddle: TDoodle
 }
 
-export const DownloadsTable = ({
+export const DownloadsTableServer = ({
   downloads,
 }: {
   downloads: DownloadWithInformation[]
@@ -30,7 +31,9 @@ export const DownloadsTable = ({
                 <Table.RowHeaderCell>
                   <strong>{download.downloadedDoddle.title}</strong>
                 </Table.RowHeaderCell>
-                <Table.Cell>{download.created_at}</Table.Cell>
+                <Table.Cell>
+                  {dayjs(download.created_at).format('DD MMMM YYYY')}
+                </Table.Cell>
                 <Table.Cell className="flex items-center gap-2">
                   <Avatar
                     size="1"
