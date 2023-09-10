@@ -1,7 +1,7 @@
 import React from 'react'
 import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { Card, DownloadsTableServer } from '@/components'
+import { Card, DownloadsTableServer, LikesTableServer } from '@/components'
 
 export const dynamic = 'force-dynamic'
 
@@ -11,25 +11,23 @@ export default async function Dashboard() {
   const {
     data: { session },
   } = await supabase.auth.getSession()
+
   const { data } = await supabase
-    .from('downloads')
+    .from('likes')
     .select('*, profile: profiles(*),doodle: doodles(*)')
+    .eq('user_id', session?.user.id)
     .order('created_at', { ascending: false })
 
   if (data?.length === 0) {
     return <Card className="w-full">Found no doodles!</Card>
   }
 
-  const downloads =
-    data?.map(download => ({
-      ...download,
-      userProfile: Array.isArray(download.profile)
-        ? download.profile[0]
-        : download.profile,
-      downloadedDoddle: Array.isArray(download.doodle)
-        ? download.doodle[0]
-        : download.doodle,
+  const likes =
+    data?.map(like => ({
+      ...like,
+      userProfile: Array.isArray(like.profile) ? like.profile[0] : like.profile,
+      likedDoodle: Array.isArray(like.doodle) ? like.doodle[0] : like.doodle,
     })) ?? []
 
-  return <DownloadsTableServer downloads={downloads} />
+  return <LikesTableServer likes={likes} />
 }
