@@ -4,7 +4,7 @@ import React from 'react'
 export const UsersTableServer = ({ profiles }: { profiles: TProfile[] }) => {
   return (
     <div className="w-full">
-      <Table.Root variant="surface">
+      <Table.Root variant="ghost">
         <Table.Header>
           <Table.Row>
             <Table.ColumnHeaderCell>Username</Table.ColumnHeaderCell>

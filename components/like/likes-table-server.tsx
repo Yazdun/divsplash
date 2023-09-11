@@ -14,7 +14,7 @@ export const LikesTableServer = ({
 }) => {
   return (
     <div className="w-full">
-      <Table.Root variant="surface">
+      <Table.Root variant="ghost">
         <Table.Header>
           <Table.Row>
             <Table.ColumnHeaderCell>Title</Table.ColumnHeaderCell>
