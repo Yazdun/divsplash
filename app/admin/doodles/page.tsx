@@ -10,6 +10,7 @@ export default async function Doodles() {
   const { data } = await supabase
     .from('doodles')
     .select('*, likes(user_id), downloads(user_id)')
+    .order('created_at', { ascending: false })
 
   if (!data) return null
 
@@ -23,7 +24,7 @@ export default async function Doodles() {
   return (
     <div className="flex flex-col items-end w-full gap-5">
       <UploadDoodleDialog />
-      <DoodlesTableServer doodles={doodles.reverse()} />
+      <DoodlesTableServer doodles={doodles} />
     </div>
   )
 }

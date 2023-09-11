@@ -23,7 +23,7 @@ export default async function Users() {
 
   return (
     <div className="w-full text-center">
-      <UsersTableServer profiles={profiles} />
+      <UsersTableServer profiles={profiles.reverse()} />
     </div>
   )
 }
