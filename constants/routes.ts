@@ -11,5 +11,9 @@ export const ROUTES = {
   },
   PUBLIC: {
     DOODLES: '/doodles',
+    HOME: '/home',
+  },
+  EXTERNAL: {
+    GITHUB: 'https://github.com/Yazdun/divsplash',
   },
 }

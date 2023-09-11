@@ -1,6 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-import { AuthButtonServer } from '@/components'
+import {
+  AuthButtonServer,
+  NavigationRoutesDesktop,
+  NavigationRoutesMobile,
+} from '@/components'
 
 export const NavigationTopbarServer = () => {
   return (
@@ -13,7 +17,9 @@ export const NavigationTopbarServer = () => {
         </Link>
 
         <div className="flex items-center gap-5 text-sm">
+          <NavigationRoutesDesktop />
           <AuthButtonServer />
+          <NavigationRoutesMobile />
         </div>
       </div>
     </div>
