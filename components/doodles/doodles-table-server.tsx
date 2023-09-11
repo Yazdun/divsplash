@@ -4,8 +4,8 @@ import { DoodleDeleteDialog } from './doodle-delete-dialog'
 import dayjs from 'dayjs'
 
 type TDoodleWithStats = TDoodle & {
-  downloads?: number
-  likes?: number
+  downloads: number
+  likes: number
 }
 
 export const DoodlesTableServer = ({
