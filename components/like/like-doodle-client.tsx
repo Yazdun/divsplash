@@ -29,12 +29,14 @@ export const LikeDoodleClient = ({ doodle }: { doodle: TDoodleWithStats }) => {
           .from('likes')
           .delete()
           .match({ user_id: user.id, doodle_id: doodle.id })
+        router.refresh()
       } else {
         setIsLiked(true)
         setLikes(prev => prev + 1)
         await supabase
           .from('likes')
           .insert({ user_id: user.id, doodle_id: doodle.id })
+        router.refresh()
       }
     }
   }
