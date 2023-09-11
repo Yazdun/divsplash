@@ -9,10 +9,12 @@ import { AnimatePresence } from 'framer-motion'
 import React, { useState } from 'react'
 import { BsHeart, BsHeartFill } from 'react-icons/bs'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 export const LikeDoodleClient = ({ doodle }: { doodle: TDoodleWithStats }) => {
   const [isLiked, setIsLiked] = useState(doodle.user_has_liked_doodle)
   const [likes, setLikes] = useState(doodle.likes)
+  const router = useRouter()
 
   const handleLike = async () => {
     const supabase = createClientComponentClient<Database>()
@@ -38,7 +40,10 @@ export const LikeDoodleClient = ({ doodle }: { doodle: TDoodleWithStats }) => {
   }
   return (
     <button
-      onClick={handleLike}
+      onClick={async () => {
+        await handleLike()
+        router.refresh()
+      }}
       className={clsx(
         'flex overflow-hidden items-center gap-1 px-3 py-1 text-sm border-2  rounded-xl border-zinc-100',
       )}
