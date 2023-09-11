@@ -29,21 +29,20 @@ export const LikeDoodleClient = ({ doodle }: { doodle: TDoodleWithStats }) => {
           .from('likes')
           .delete()
           .match({ user_id: user.id, doodle_id: doodle.id })
+        router.refresh()
       } else {
         setIsLiked(true)
         setLikes(prev => prev + 1)
         await supabase
           .from('likes')
           .insert({ user_id: user.id, doodle_id: doodle.id })
+        router.refresh()
       }
     }
   }
   return (
     <button
-      onClick={async () => {
-        await handleLike()
-        router.refresh()
-      }}
+      onClick={handleLike}
       className={clsx(
         'flex overflow-hidden items-center gap-1 px-3 py-1 text-sm border-2  rounded-xl border-zinc-100',
       )}
