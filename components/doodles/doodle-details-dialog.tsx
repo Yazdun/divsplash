@@ -84,7 +84,7 @@ export const DoodleDetailsDialog = ({
           </Dialog.Close>
           <Button
             variant="solid"
-            color="green"
+            color="blue"
             size="3"
             disabled={loading}
             onClick={() => {

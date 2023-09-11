@@ -22,7 +22,7 @@ export async function AuthButtonServer() {
     .single()
 
   return session ? (
-    <Button asChild variant="solid" color="gray" highContrast>
+    <Button asChild variant="surface" highContrast color="gray">
       <Link
         href={
           user?.role === 'admin'
