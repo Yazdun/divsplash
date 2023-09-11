@@ -6,7 +6,7 @@ import dayjs from 'dayjs'
 export const DoodlesTableServer = ({ doodles }: { doodles: TDoodle[] }) => {
   return (
     <div className="w-full">
-      <Table.Root>
+      <Table.Root variant="surface">
         <Table.Header>
           <Table.Row>
             <Table.ColumnHeaderCell>Title</Table.ColumnHeaderCell>
