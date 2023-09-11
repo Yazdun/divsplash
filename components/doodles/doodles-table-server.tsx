@@ -40,8 +40,8 @@ export const DoodlesTableServer = ({
                 <Table.Cell>
                   {dayjs(doodle.created_at).format('DD MMMM YYYY')}
                 </Table.Cell>
-                <Table.Cell>0</Table.Cell>
-                <Table.Cell>0</Table.Cell>
+                <Table.Cell>{doodle.downloads}</Table.Cell>
+                <Table.Cell>{doodle.likes}</Table.Cell>
                 <Table.Cell align="right">
                   <DoodleDeleteDialog doodle={doodle} />
                 </Table.Cell>
