@@ -31,7 +31,7 @@ export const DownloadsTableServer = ({
                 <Table.RowHeaderCell>
                   <strong>{download.downloadedDoddle.title}</strong>
                 </Table.RowHeaderCell>
-                <Table.Cell width={500}>
+                <Table.Cell>
                   {dayjs(download.created_at).format('DD MMMM YYYY')}
                 </Table.Cell>
                 <Table.Cell className="flex items-center gap-2">

@@ -10,10 +10,14 @@ export const DoodlesTableServer = ({ doodles }: { doodles: TDoodle[] }) => {
         <Table.Header>
           <Table.Row>
             <Table.ColumnHeaderCell>Title</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Created At</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell width={300}>
+              Created At
+            </Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Downloads</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Likes</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Actions</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>
+              <span className="sr-only">actions</span>
+            </Table.ColumnHeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -29,7 +33,7 @@ export const DoodlesTableServer = ({ doodles }: { doodles: TDoodle[] }) => {
                 </Table.Cell>
                 <Table.Cell>0</Table.Cell>
                 <Table.Cell>0</Table.Cell>
-                <Table.Cell>
+                <Table.Cell align="right">
                   <DoodleDeleteDialog doodle={doodle} />
                 </Table.Cell>
               </Table.Row>
