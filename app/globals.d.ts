@@ -11,7 +11,7 @@ declare global {
   type TProfile = Profile
   type TLike = Like
   type TDownload = Download
-  type TDoodleWithStats = Doodle & {
+  type TDoodleWithLikes = Doodle & {
     likes: number
     user_has_liked_doodle: boolean
   }

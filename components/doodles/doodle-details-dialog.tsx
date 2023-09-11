@@ -15,7 +15,7 @@ export const DoodleDetailsDialog = ({
   doodle,
   session,
 }: {
-  doodle: TDoodleWithStats
+  doodle: TDoodleWithLikes
   session: Session | undefined
 }) => {
   const [loading, setLoading] = useState(false)
