@@ -10,8 +10,10 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import clsx from 'clsx'
 import { BiHomeAlt2, BiParty } from 'react-icons/bi'
-import { Divide as Hamburger } from 'hamburger-react'
+import { Pivot as Hamburger } from 'hamburger-react'
 import { BsBalloon } from 'react-icons/bs'
+import { TbBrandGithub } from 'react-icons/tb'
+import { ROUTES } from '@/constants'
 
 const routes = [
   {
@@ -32,6 +34,13 @@ const routes = [
     href: '/about',
     Icon: BsBalloon,
   },
+  {
+    shortTitle: 'GitHub',
+    longTitle: 'GitHub',
+    href: ROUTES.EXTERNAL.GITHUB,
+    Icon: TbBrandGithub,
+    target: '_blank',
+  },
 ]
 
 export const NavigationRoutesDesktop = () => {
@@ -50,7 +59,7 @@ export const NavigationRoutesDesktop = () => {
               highContrast
               color={isActive ? 'blue' : 'gray'}
             >
-              <Link href={route.href}>
+              <Link href={route.href} target={route.target || ''}>
                 <Icon className="mb-[0.05rem]" />
                 <span>{route.shortTitle}</span>
               </Link>
@@ -70,13 +79,13 @@ export const NavigationRoutesMobile = () => {
   useClickAway(ref, () => setOpen(false))
 
   return (
-    <div ref={ref} className="md:hidden">
+    <div ref={ref} className="z-50 md:hidden">
       <Hamburger toggled={isOpen} toggle={setOpen} />
       <AnimatePresence>
         {isOpen && (
           <motion.div
             {...framerMenu}
-            className="fixed left-0 right-0 top-[4.4rem] p-5 bg-grayscale-900 border-b border-b-white/20"
+            className="fixed left-0 right-0 top-[4.4rem] p-5 bg-white border-b-2 border-b-zinc-200"
           >
             <ul className="grid gap-2">
               {routes.map((route, idx) => {
@@ -90,12 +99,13 @@ export const NavigationRoutesMobile = () => {
                     className="w-full"
                   >
                     <Link
+                      target={route.target || ''}
                       onClick={() => setOpen(prev => !prev)}
                       className={clsx(
                         'flex items-center justify-between w-full p-5 rounded-xl',
                         isActive
-                          ? 'bg-lime-900/20 text-lime-400 text-primary-500 pointer-events-none'
-                          : 'bg-white/5',
+                          ? 'bg-zinc-100 text-blue-600 pointer-events-none'
+                          : '',
                       )}
                       href={route.href}
                     >

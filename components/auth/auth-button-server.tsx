@@ -43,7 +43,8 @@ export async function AuthButtonServer() {
           className="flex items-center gap-3"
         >
           <AiOutlinePlus />
-          Join DivSplash
+          <span className="hidden md:flex">Join DivSplash</span>
+          <span className="flex md:hidden">Sign Up</span>
         </Button>
       }
     />
