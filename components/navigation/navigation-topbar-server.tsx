@@ -17,7 +17,9 @@ export const NavigationTopbarServer = () => {
         </Link>
 
         <div className="flex items-center gap-5 text-sm">
-          <NavigationRoutesDesktop />
+          <div className="hidden md:flex">
+            <NavigationRoutesDesktop />
+          </div>
           <AuthButtonServer />
           <NavigationRoutesMobile />
         </div>

@@ -47,7 +47,7 @@ export const NavigationRoutesDesktop = () => {
   const pathname = usePathname()
 
   return (
-    <ul className="items-center hidden gap-5 md:flex">
+    <ul className="flex items-center gap-5">
       {routes.map(route => {
         const isActive = pathname === route.href
         const { Icon } = route
