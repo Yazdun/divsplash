@@ -4,7 +4,7 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import { BsHeart } from 'react-icons/bs'
 
-export const DoodleAuthDialog = ({ doodle }: { doodle: TDoodleWithStats }) => {
+export const DoodleAuthDialog = ({ doodle }: { doodle: TDoodleWithLikes }) => {
   return (
     <AuthDialogClient
       title="Sorry to interrupt! 🥸"

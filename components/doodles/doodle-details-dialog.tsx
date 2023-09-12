@@ -15,7 +15,7 @@ export const DoodleDetailsDialog = ({
   doodle,
   session,
 }: {
-  doodle: TDoodleWithStats
+  doodle: TDoodleWithLikes
   session: Session | undefined
 }) => {
   const [loading, setLoading] = useState(false)
@@ -84,7 +84,7 @@ export const DoodleDetailsDialog = ({
           </Dialog.Close>
           <Button
             variant="solid"
-            color="green"
+            color="blue"
             size="3"
             disabled={loading}
             onClick={() => {
