@@ -42,7 +42,10 @@ export const LikeDoodleClient = ({ doodle }: { doodle: TDoodleWithLikes }) => {
   }
   return (
     <button
-      onClick={handleLike}
+      onClick={async () => {
+        await handleLike()
+        router.refresh()
+      }}
       className={clsx(
         'flex overflow-hidden items-center gap-1 px-3 py-1 text-sm border-2  rounded-xl border-zinc-100',
       )}
