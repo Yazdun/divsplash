@@ -4,7 +4,9 @@ import { cookies } from 'next/headers'
 import { ROUTES } from '@/constants'
 import Link from 'next/link'
 import { Button } from '@radix-ui/themes'
-import { AiOutlinePlus } from 'react-icons/ai'
+import { AiOutlinePlus, AiOutlineUser } from 'react-icons/ai'
+import { FaLongArrowAltRight } from 'react-icons/fa'
+import { BsArrowRightCircle } from 'react-icons/bs'
 
 export const dynamic = 'force-dynamic'
 
@@ -22,7 +24,7 @@ export async function AuthButtonServer() {
     .single()
 
   return session ? (
-    <Button asChild variant="solid" color="gray" highContrast>
+    <Button asChild variant="surface" highContrast color="gray">
       <Link
         href={
           user?.role === 'admin'
@@ -43,7 +45,8 @@ export async function AuthButtonServer() {
           className="flex items-center gap-3"
         >
           <AiOutlinePlus />
-          Join DivSplash
+          <span className="hidden md:flex">Join DivSplash</span>
+          <span className="flex md:hidden">Sign Up</span>
         </Button>
       }
     />

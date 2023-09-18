@@ -28,21 +28,30 @@ export default async function DoodlesPage() {
     })) ?? []
 
   return (
-    <ul className="container grid gap-2 p-5 md:grid-cols-3 lg:grid-cols-4">
-      {doodles?.map(doodle => {
-        return (
-          <li key={doodle.id} className="w-full">
-            {session ? (
-              <DoodleDetailsDialog
-                doodle={doodle}
-                session={session || undefined}
-              />
-            ) : (
-              <DoodleAuthDialog doodle={doodle} />
-            )}
-          </li>
-        )
-      })}
-    </ul>
+    <main className="container px-5">
+      <div className="flex flex-col items-center justify-center my-10 space-y-2 text-center">
+        <h1 className="text-3xl font-bold">Doodles</h1>
+        <p className="max-w-lg">
+          You can view all the doodles here, Click on the doodle to view the
+          download link. You can also like them if you want to!
+        </p>
+      </div>
+      <ul className="grid gap-2 md:grid-cols-3 lg:grid-cols-4">
+        {doodles?.map(doodle => {
+          return (
+            <li key={doodle.id} className="w-full">
+              {session ? (
+                <DoodleDetailsDialog
+                  doodle={doodle}
+                  session={session || undefined}
+                />
+              ) : (
+                <DoodleAuthDialog doodle={doodle} />
+              )}
+            </li>
+          )
+        })}
+      </ul>
+    </main>
   )
 }

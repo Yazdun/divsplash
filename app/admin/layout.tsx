@@ -70,7 +70,7 @@ export default async function AdminLayout({
       <div className="max-w-lg gap-5 md:max-w-full lg:flex md:items-start">
         <Card
           style={{ padding: 0 }}
-          className="w-full lg:max-w-[250px] mb-5 sticky top-20"
+          className="w-full lg:max-w-[250px] mb-5 lg:sticky top-20"
         >
           <UserCardServer session={session} />
           <NavigationCardServer routes={adminRoutes} />

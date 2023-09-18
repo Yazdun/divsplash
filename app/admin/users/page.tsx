@@ -7,13 +7,23 @@ export const dynamic = 'force-dynamic'
 
 export default async function Users() {
   const supabase = createServerComponentClient<Database>({ cookies })
-  const { data: profiles } = await supabase.from('profiles').select()
+  const { data } = await supabase
+    .from('profiles')
+    .select()
+    .select('*, likes(user_id), downloads(user_id)')
 
-  if (!profiles) return null
+  if (!data) return null
+
+  const profiles =
+    data?.map(profile => ({
+      ...profile,
+      downloads: profile.downloads.length,
+      likes: profile.likes.length,
+    })) ?? []
 
   return (
     <div className="w-full text-center">
-      <UsersTableServer profiles={profiles} />
+      <UsersTableServer profiles={profiles.reverse()} />
     </div>
   )
 }

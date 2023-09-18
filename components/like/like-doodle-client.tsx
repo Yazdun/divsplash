@@ -11,7 +11,7 @@ import { BsHeart, BsHeartFill } from 'react-icons/bs'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 
-export const LikeDoodleClient = ({ doodle }: { doodle: TDoodleWithStats }) => {
+export const LikeDoodleClient = ({ doodle }: { doodle: TDoodleWithLikes }) => {
   const [isLiked, setIsLiked] = useState(doodle.user_has_liked_doodle)
   const [likes, setLikes] = useState(doodle.likes)
   const router = useRouter()
@@ -29,12 +29,14 @@ export const LikeDoodleClient = ({ doodle }: { doodle: TDoodleWithStats }) => {
           .from('likes')
           .delete()
           .match({ user_id: user.id, doodle_id: doodle.id })
+        router.refresh()
       } else {
         setIsLiked(true)
         setLikes(prev => prev + 1)
         await supabase
           .from('likes')
           .insert({ user_id: user.id, doodle_id: doodle.id })
+        router.refresh()
       }
     }
   }

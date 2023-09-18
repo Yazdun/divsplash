@@ -1,16 +1,25 @@
 import { Avatar, Table } from '@radix-ui/themes'
 import React from 'react'
 
-export const UsersTableServer = ({ profiles }: { profiles: TProfile[] }) => {
+type TProfileWithDownloads = TProfile & {
+  downloads: number
+  likes: number
+}
+
+export const UsersTableServer = ({
+  profiles,
+}: {
+  profiles: TProfileWithDownloads[]
+}) => {
   return (
     <div className="w-full">
-      <Table.Root>
+      <Table.Root variant="ghost">
         <Table.Header>
           <Table.Row>
             <Table.ColumnHeaderCell>Username</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Role</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Downloads</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Details</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Likes</Table.ColumnHeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -30,8 +39,8 @@ export const UsersTableServer = ({ profiles }: { profiles: TProfile[] }) => {
                   </span>
                 </Table.RowHeaderCell>
                 <Table.Cell>{profile.role}</Table.Cell>
-                <Table.Cell>0</Table.Cell>
-                <Table.Cell>-</Table.Cell>
+                <Table.Cell>{profile.downloads}</Table.Cell>
+                <Table.Cell>{profile.likes}</Table.Cell>
               </Table.Row>
             )
           })}
