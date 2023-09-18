@@ -44,7 +44,7 @@ export default async function DoodlesPage() {
           <Image src={DoodleImage} alt="A vibrant and artistic doodle" />
         </div>
       </div>
-      <ul className="grid gap-2 md:grid-cols-3 lg:grid-cols-4">
+      <ul className="grid gap-2 pb-5 md:grid-cols-3 lg:grid-cols-4">
         {doodles?.map(doodle => {
           return (
             <li key={doodle.id} className="w-full">

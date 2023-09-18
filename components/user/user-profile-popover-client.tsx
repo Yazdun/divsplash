@@ -13,6 +13,7 @@ import { HiOutlineChatBubbleBottomCenter } from 'react-icons/hi2'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useRouter } from 'next/navigation'
 import { ROUTES } from '@/constants'
+import { BsFolder2Open } from 'react-icons/bs'
 
 export const UserProfilePopoverClient = ({
   session,
@@ -52,20 +53,18 @@ export const UserProfilePopoverClient = ({
             />
             <div>
               <p>{session.user.user_metadata.name}</p>
-              <p className="text-sm text-zinc-400">
-                {session.user.user_metadata.email}
-              </p>
+              <p className="text-sm">{session.user.user_metadata.email}</p>
             </div>
           </div>
           <Popover.Close>
-            <Button size="1" variant="ghost">
+            <Button size="1" color="gray" variant="ghost">
               <AiOutlineClose />
             </Button>
           </Popover.Close>
         </div>
-        <Separator orientation="horizontal" size="4" />
-        <ul>
-          <li className="transition-all border-b border-zinc-700 text-zinc-400 hover:text-white">
+
+        <ul className="border-t">
+          <li className="transition-all border-b hover:bg-zinc-100 border-zinc-300">
             <Link
               onClick={() => setOpen(prev => !prev)}
               className="flex items-center justify-between p-5"
@@ -79,17 +78,17 @@ export const UserProfilePopoverClient = ({
               <AiOutlineUser className="text-xl" />
             </Link>
           </li>
-          <li className="transition-all border-b text-zinc-400 hover:text-white border-zinc-700">
+          <li className="transition-all border-b hover:bg-zinc-100 border-zinc-300">
             <Link
               className="flex items-center justify-between p-5"
               onClick={() => setOpen(prev => !prev)}
               href={ROUTES.USER.DASHBOARD}
             >
-              Your Quizzes
-              <HiOutlineChatBubbleBottomCenter className="text-xl" />
+              Downloads
+              <BsFolder2Open className="text-xl" />
             </Link>
           </li>
-          <li className="transition-all text-rose-400 hover:bg-rose-950/10">
+          <li className="transition-all text-rose-500">
             <button
               onClick={handleSignOut}
               className="flex items-center justify-between w-full p-5"
