@@ -2,6 +2,8 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import React from 'react'
 import { cookies } from 'next/headers'
 import { DoodleAuthDialog, DoodleDetailsDialog } from '@/components'
+import DoodleImage from '@/assets/aada.png'
+import Image from 'next/image'
 
 export const dynamic = 'force-dynamic'
 
@@ -29,12 +31,18 @@ export default async function DoodlesPage() {
 
   return (
     <main className="container px-5">
-      <div className="flex flex-col items-center justify-center my-10 space-y-2 text-center">
-        <h1 className="text-3xl font-bold">Doodles</h1>
-        <p className="max-w-lg">
-          You can view all the doodles here, Click on the doodle to view the
-          download link. You can also like them if you want to!
-        </p>
+      <div className="flex flex-col items-center gap-5 my-10 lg:flex-row">
+        <div className="w-full space-y-5 text-center lg:text-left">
+          <h1 className="text-6xl font-bold">DivSplash</h1>
+          <p className="text-3xl lg:flex lg:flex-col">
+            Crafting cool Web & App illustrations <span>for you.</span>
+          </p>
+        </div>
+        <div className="relative">
+          <div className="absolute top-0 bottom-0 right-0 w-20 bg-gradient-to-l from-white to-transparent"></div>
+          <div className="absolute top-0 bottom-0 left-0 w-20 bg-gradient-to-r from-white to-transparent"></div>
+          <Image src={DoodleImage} alt="A vibrant and artistic doodle" />
+        </div>
       </div>
       <ul className="grid gap-2 md:grid-cols-3 lg:grid-cols-4">
         {doodles?.map(doodle => {

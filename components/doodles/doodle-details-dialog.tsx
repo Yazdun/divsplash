@@ -51,7 +51,7 @@ export const DoodleDetailsDialog = ({
 
   return (
     <Dialog.Root>
-      <div className="bg-white border-2 rounded-md border-zinc-100">
+      <div className="transition-all bg-white border-2 border-white shadow-sm rounded-xl hover:border-zinc-200">
         <Dialog.Trigger>
           <button className="flex flex-col items-center justify-between w-full gap-2 p-5 text-center">
             <div className="h-[200px] w-full flex justify-center items-center">
@@ -62,10 +62,10 @@ export const DoodleDetailsDialog = ({
                 height={200}
               />
             </div>
-            <h2 className="font-bold">{doodle.title}</h2>
           </button>
         </Dialog.Trigger>
-        <div className="px-5 py-2 border-t-2 border-zinc-100">
+        <div className="flex items-center justify-between px-5 py-2">
+          <h2 className="text-sm">{doodle.title}</h2>
           <LikeDoodleClient doodle={doodle} />
         </div>
       </div>
