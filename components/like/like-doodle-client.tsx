@@ -47,7 +47,7 @@ export const LikeDoodleClient = ({ doodle }: { doodle: TDoodleWithLikes }) => {
         router.refresh()
       }}
       className={clsx(
-        'flex overflow-hidden items-center gap-1 px-3 py-1 text-sm border-2  rounded-xl transition-all border-zinc-100',
+        'flex overflow-hidden items-center gap-1 px-3 py-1 text-sm border-2  rounded-xl transition-all',
         isLiked ? 'bg-rose-50 border-rose-100' : 'border-zinc-100',
       )}
     >
