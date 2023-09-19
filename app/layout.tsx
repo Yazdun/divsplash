@@ -2,7 +2,6 @@ import { NavigationTopbarServer } from '@/components'
 import clsx from 'clsx'
 import { Theme } from '@radix-ui/themes'
 import { Toaster } from 'react-hot-toast'
-import '@uploadthing/react/styles.css'
 import '@radix-ui/themes/styles.css'
 import './globals.css'
 

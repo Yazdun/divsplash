@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Button, Dialog } from '@radix-ui/themes'
+import { Badge, Button, Dialog } from '@radix-ui/themes'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { FileResponse, UploadImageDndClient } from '../upload-image'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -57,6 +57,11 @@ export const UploadDoodleDialog = () => {
       >
         <Dialog.Title>Create Doodle</Dialog.Title>
         <UploadImageDndClient setFiles={setFiles} />
+        {files && (
+          <Badge color="green" variant="soft">
+            Doodle file has been stored
+          </Badge>
+        )}
         <FormProvider {...methods}>
           <form className="space-y-4" onSubmit={e => e.preventDefault()}>
             <Input {...titleValidation} />

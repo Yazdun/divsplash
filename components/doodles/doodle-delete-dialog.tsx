@@ -24,6 +24,9 @@ export const DoodleDeleteDialog = ({ doodle }: { doodle: TDoodle }) => {
         router.refresh()
         toast.success('Doodle deleted successfully')
         setOpen(false)
+      } else {
+        setLoading(false)
+        toast.error('Something went wrong')
       }
     })
   }
