@@ -16,7 +16,7 @@ export function UploadImageDndClient({
   return (
     <div className="p-10 border-2 border-dashed">
       <UploadButton<OurFileRouter>
-        className="mt-4 ut-button:bg-gray-950 ut-button:cursor-pointer ut-button:ut-readying:bg-black/50 ut-button:px-5 ut-button:py-2"
+        className="mt-4 ut-button:bg-gray-950 ut-button:text-white ut-button:cursor-pointer ut-button:ut-readying:bg-black/20 ut-button:px-5 ut-button:py-2"
         content={{
           button({ ready, isUploading, uploadProgress }) {
             if (ready) return <div>Upload Doodle</div>
