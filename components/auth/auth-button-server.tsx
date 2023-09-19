@@ -3,6 +3,7 @@ import { AuthDialogClient, UserProfilePopoverClient } from '@/components'
 import { cookies } from 'next/headers'
 import { Button } from '@radix-ui/themes'
 import { AiOutlinePlus, AiOutlineUser } from 'react-icons/ai'
+import { FaArrowRightLong } from 'react-icons/fa6'
 
 export const dynamic = 'force-dynamic'
 
@@ -28,11 +29,10 @@ export async function AuthButtonServer() {
           variant="solid"
           color="gray"
           highContrast
-          className="flex items-center gap-3"
+          className="flex items-center gap-3 shadow-2xl"
         >
-          <AiOutlinePlus />
-          <span className="hidden md:flex">Join DivSplash</span>
-          <span className="flex md:hidden">Sign Up</span>
+          <FaArrowRightLong />
+          <span>Login</span>
         </Button>
       }
     />

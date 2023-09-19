@@ -51,7 +51,7 @@ export const DoodleDetailsDialog = ({
 
   return (
     <Dialog.Root>
-      <div className="transition-all bg-white border-2 border-white shadow-sm rounded-xl hover:border-slate-100">
+      <div className="transition-all bg-white border-2 border-white shadow-sm rounded-xl hover:border-slate-200">
         <Dialog.Trigger>
           <button className="flex flex-col items-center justify-between w-full gap-2 p-5 text-center">
             <div className="h-[200px] w-full flex justify-center items-center">

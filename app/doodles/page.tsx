@@ -41,7 +41,11 @@ export default async function DoodlesPage() {
         <div className="relative">
           <div className="absolute top-0 bottom-0 right-0 w-20 bg-gradient-to-l from-white to-transparent"></div>
           <div className="absolute top-0 bottom-0 left-0 w-20 bg-gradient-to-r from-white to-transparent"></div>
-          <Image src={DoodleImage} alt="A vibrant and artistic doodle" />
+          <Image
+            src={DoodleImage}
+            placeholder="blur"
+            alt="A vibrant and artistic doodle"
+          />
         </div>
       </div>
       <ul className="grid gap-2 pb-5 md:grid-cols-3 lg:grid-cols-4">
