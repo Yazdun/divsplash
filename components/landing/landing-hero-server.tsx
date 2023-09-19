@@ -42,7 +42,7 @@ export async function LandingHeroServer() {
             <h1 className="relative text-4xl font-black md:text-5xl -rotate-3 lg:rotate-0">
               DivSplash.
             </h1>
-            <div className="absolute mt-5 top-0 rotate-[120deg] -right-14 lg:hidden">
+            <div className="absolute top-0 rotate-[120deg] -right-14 lg:hidden">
               <Image src={ARROW} alt="" />
             </div>
           </div>
