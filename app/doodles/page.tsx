@@ -34,7 +34,7 @@ export default async function DoodlesPage() {
       <div className="flex flex-col items-center gap-5 my-10 lg:flex-row">
         <div className="w-full space-y-5 text-center lg:text-left">
           <h1 className="text-6xl font-bold">DivSplash</h1>
-          <p className="text-3xl lg:flex lg:flex-col">
+          <p className="text-2xl md:text-3xl lg:flex lg:flex-col">
             Crafting cool Web & App illustrations <span>for you.</span>
           </p>
         </div>
