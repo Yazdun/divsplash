@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: 'DivSplash',
     images: [
       {
-        url: 'https://www.divsplash.co/api/og/home',
+        url: 'https://raw.githubusercontent.com/Yazdun/yazdun.com/main/public/og.jpg',
         width: 1200,
         height: 630,
       },
