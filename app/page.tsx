@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://www.divsplash.co/api/og/home',
-        width: 1200,
-        height: 630,
+        width: 830,
+        height: 420,
       },
     ],
     locale: 'en_US',
