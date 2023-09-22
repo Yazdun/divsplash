@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'DivSplash',
     images: [
       {
-        url: 'https://www.divsplash.co/api/og/home',
+        url: 'https://divsplash.co/api/og/home',
         width: 1200,
         height: 630,
       },
