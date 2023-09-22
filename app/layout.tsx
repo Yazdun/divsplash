@@ -4,12 +4,27 @@ import { Theme } from '@radix-ui/themes'
 import { Toaster } from 'react-hot-toast'
 import '@radix-ui/themes/styles.css'
 import './globals.css'
+import { Metadata } from 'next' // if using TypeScript
 
 export const dynamic = 'force-dynamic'
 
-export const metadata = {
-  title: 'DivSplash — Homepage ',
-  description: 'Welcome to DivSplash!',
+export const metadata: Metadata = {
+  title: 'DivSplash',
+  description:
+    'Snag some fantastic doodles for your websites, apps or designs!',
+  openGraph: {
+    url: 'https://www.divsplash.co',
+    siteName: 'DivSplash',
+    images: [
+      {
+        url: 'https://www.divsplash.co/api/og/home',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
