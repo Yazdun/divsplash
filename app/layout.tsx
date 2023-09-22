@@ -29,7 +29,7 @@ export default function RootLayout({
         <Theme>
           <NavigationTopbarServer />
           <main className="h-[95vh]">{children}</main>
-          <footer className="p-5 text-center bg-slate-100 border-t-2 border-slate-200 sticky top-[100%]">
+          <footer className="p-5 text-center border-t-2 border-slate-200 sticky top-[100%]">
             DivSplash | Made with ❤️
           </footer>
         </Theme>
