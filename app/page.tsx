@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://www.divsplash.co/api/og/home',
-        width: 1200,
-        height: 630,
+        width: 800,
+        height: 600,
       },
       {
         url: 'https://www.divsplash.co/api/og/home',
-        width: 1200,
-        height: 630,
+        width: 1800,
+        height: 1600,
         alt: 'My custom alt',
       },
     ],
