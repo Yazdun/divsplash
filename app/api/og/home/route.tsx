@@ -44,8 +44,8 @@ export async function GET() {
       </div>
     ),
     {
-      width: 1200,
-      height: 630,
+      width: 830,
+      height: 420,
     },
   )
 }
