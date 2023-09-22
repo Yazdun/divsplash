@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Snag some fantastic doodles for your websites, apps or designs!',
   openGraph: {
-    url: 'https://www.divsplash.co/',
+    url: 'https://www.divsplash.co',
     siteName: 'DivSplash',
 
     images: [
