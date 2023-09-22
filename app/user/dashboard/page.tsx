@@ -18,7 +18,7 @@ export default async function Dashboard() {
     return (
       <UserItemStatusServer
         icon={MdOutlineFolderOff}
-        title="You haven't donwloaded any doodles yet"
+        title="You haven't downloaded any doodles yet"
         desc="Once you download a doodle, it will appear here. Click on the below button to go to the doodles page."
         href="/doodles"
       />

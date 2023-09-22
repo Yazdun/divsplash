@@ -1,7 +1,13 @@
-import { Card, DownloadsTableServer, UsersTableServer } from '@/components'
+import {
+  Card,
+  DownloadsTableServer,
+  UserItemStatusServer,
+  UsersTableServer,
+} from '@/components'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import React from 'react'
 import { cookies } from 'next/headers'
+import { MdOutlineFolderOff } from 'react-icons/md'
 
 export const dynamic = 'force-dynamic'
 
@@ -12,7 +18,16 @@ export default async function Users() {
     .select('*, profile: profiles(*),doodle: doodles(*)')
     .order('created_at', { ascending: false })
 
-  if (!data) return null
+  if (!data || data.length > 0) {
+    return (
+      <UserItemStatusServer
+        icon={MdOutlineFolderOff}
+        title="Users haven't downloaded any doodles yet"
+        desc="Once someone download a doodle, it will appear here. Click on the below button to go to the doodles page."
+        href="/doodles"
+      />
+    )
+  }
 
   const downloads =
     data?.map(download => ({

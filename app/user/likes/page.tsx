@@ -1,9 +1,7 @@
 import React from 'react'
 import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { Card, LikesTableServer, UserItemStatusServer } from '@/components'
-import { Button } from '@radix-ui/themes'
-import Link from 'next/link'
+import { LikesTableServer, UserItemStatusServer } from '@/components'
 import { IoHeartDislikeOutline } from 'react-icons/io5'
 
 export const dynamic = 'force-dynamic'
