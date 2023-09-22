@@ -1,6 +1,4 @@
 import { ImageResponse } from 'next/server'
-// App router includes @vercel/og.
-// No need to install it.
 
 export const runtime = 'edge'
 
@@ -45,7 +43,7 @@ export async function GET() {
     ),
     {
       width: 1200,
-      height: 628,
+      height: 630,
     },
   )
 }
