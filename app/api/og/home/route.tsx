@@ -5,10 +5,6 @@ import { ImageResponse } from 'next/server'
 export const runtime = 'edge'
 
 export async function GET() {
-  const image = await fetch(new URL('./doodle.png', import.meta.url)).then(
-    res => res.arrayBuffer(),
-  )
-
   return new ImageResponse(
     (
       <div
@@ -39,7 +35,10 @@ export async function GET() {
             </h2>
           </div>
           <div tw="flex p-10 shadow-2xl rounded-2xl ml-10">
-            <img src={image} tw="w-[350px] h-[350px]" />
+            <img
+              src="https://www.divsplash.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdoomscroll.f699363b.png&w=384&q=75"
+              tw="w-[350px] h-[350px]"
+            />
           </div>
         </div>
       </div>
