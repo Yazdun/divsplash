@@ -1,7 +1,7 @@
 import React from 'react'
 import { ROUTES } from '@/constants'
 import Link from 'next/link'
-import { Button, Code, Text } from '@radix-ui/themes'
+import { Button } from '@radix-ui/themes'
 import DOOMSCROLL from '@/assets/doomscroll.png'
 import ARROW from '@/assets/arched-arrow.svg'
 import Image from 'next/image'

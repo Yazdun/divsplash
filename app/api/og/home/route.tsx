@@ -1,0 +1,52 @@
+import { ImageResponse } from 'next/server'
+// App router includes @vercel/og.
+// No need to install it.
+
+export const runtime = 'edge'
+
+export async function GET() {
+  const image = await fetch(new URL('./doodle.png', import.meta.url)).then(
+    res => res.arrayBuffer(),
+  )
+
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: 'white',
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <div tw="flex flex-col justify-center">
+            <h2 tw="flex flex-col w-md text-[4rem] font-black tracking-tight text-gray-900 text-left">
+              <span>DivSplash.</span>
+            </h2>
+            <h2 tw="text-3xl w-[500px] text-gray-700">
+              Snag some fantastic doodles for your websites, apps or designs.
+            </h2>
+          </div>
+          <div tw="flex p-10 shadow-2xl rounded-2xl ml-10">
+            <img src={image} tw="w-[350px] h-[350px]" />
+          </div>
+        </div>
+      </div>
+    ),
+    {
+      width: 1200,
+      height: 630,
+    },
+  )
+}
