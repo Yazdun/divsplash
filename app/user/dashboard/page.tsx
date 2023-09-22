@@ -1,23 +1,28 @@
 import React from 'react'
 import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { Card, DownloadsTableServer } from '@/components'
+import { Card, DownloadsTableServer, UserItemStatusServer } from '@/components'
+import { MdOutlineFolderOff } from 'react-icons/md'
 
 export const dynamic = 'force-dynamic'
 
 export default async function Dashboard() {
   const supabase = createServerComponentClient<Database>({ cookies })
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
   const { data } = await supabase
     .from('downloads')
     .select('*, profile: profiles(*),doodle: doodles(*)')
     .order('created_at', { ascending: false })
 
   if (data?.length === 0) {
-    return <Card className="w-full">Found no doodles!</Card>
+    return (
+      <UserItemStatusServer
+        icon={MdOutlineFolderOff}
+        title="You haven't donwloaded any doodles yet"
+        desc="Once you download a doodle, it will appear here. Click on the below button to go to the doodles page."
+        href="/doodles"
+      />
+    )
   }
 
   const downloads =

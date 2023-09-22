@@ -1,7 +1,10 @@
 import React from 'react'
 import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { Card, DownloadsTableServer, LikesTableServer } from '@/components'
+import { Card, LikesTableServer, UserItemStatusServer } from '@/components'
+import { Button } from '@radix-ui/themes'
+import Link from 'next/link'
+import { IoHeartDislikeOutline } from 'react-icons/io5'
 
 export const dynamic = 'force-dynamic'
 
@@ -19,7 +22,14 @@ export default async function Dashboard() {
     .order('created_at', { ascending: false })
 
   if (data?.length === 0) {
-    return <Card className="w-full">Found no doodles!</Card>
+    return (
+      <UserItemStatusServer
+        icon={IoHeartDislikeOutline}
+        title="You haven't liked any doodles yet"
+        desc="Once you like a doodle, it will appear here. Click on the below button to go to the doodles page."
+        href="/doodles"
+      />
+    )
   }
 
   const likes =

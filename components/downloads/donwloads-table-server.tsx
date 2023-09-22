@@ -1,5 +1,6 @@
-import { Avatar, Table } from '@radix-ui/themes'
+import { Avatar, Button, Table } from '@radix-ui/themes'
 import dayjs from 'dayjs'
+import Link from 'next/link'
 import React from 'react'
 
 type DownloadWithInformation = TDownload & {
@@ -43,7 +44,11 @@ export const DownloadsTableServer = ({
 
                   <span>{download.userProfile.name.replaceAll('"', '')}</span>
                 </Table.Cell>
-                <Table.Cell>-</Table.Cell>
+                <Table.Cell>
+                  <Button variant="ghost">
+                    <Link href="/doodles">View Doodle</Link>
+                  </Button>
+                </Table.Cell>
               </Table.Row>
             )
           })}

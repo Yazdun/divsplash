@@ -1,4 +1,7 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import {
+  Session,
+  createServerComponentClient,
+} from '@supabase/auth-helpers-nextjs'
 import React from 'react'
 import { cookies } from 'next/headers'
 import { DoodleAuthDialog, DoodleDetailsDialog } from '@/components'
@@ -52,10 +55,7 @@ export default async function DoodlesPage() {
           return (
             <li key={doodle.id} className="w-full">
               {session ? (
-                <DoodleDetailsDialog
-                  doodle={doodle}
-                  session={session || undefined}
-                />
+                <DoodleDetailsDialog doodle={doodle} />
               ) : (
                 <DoodleAuthDialog doodle={doodle} />
               )}

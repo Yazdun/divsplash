@@ -12,7 +12,6 @@ export const dynamic = 'force-dynamic'
 
 export const metadata = {
   title: 'DivSplash — Admin',
-  description: 'Welcome to DivSplash!',
 }
 
 const adminRoutes: TNavigationCardServer[] = [
@@ -65,7 +64,6 @@ export default async function AdminLayout({
 
   return (
     <main className="container p-5 space-y-5">
-      {/* I had to use flex box instead of text align, because of uploadthing css has weird effect on this element! */}
       <h1 className="text-lg font-bold">DivSplash Admin Panel 🦁</h1>
       <div className="max-w-lg gap-5 md:max-w-full lg:flex md:items-start">
         <Card
