@@ -10,17 +10,12 @@ export const metadata: Metadata = {
   openGraph: {
     url: 'https://www.divsplash.co/',
     siteName: 'DivSplash',
+
     images: [
       {
         url: 'https://www.divsplash.co/api/og/home',
-        width: 800,
-        height: 600,
-      },
-      {
-        url: 'https://www.divsplash.co/api/og/home',
-        width: 1800,
-        height: 1600,
-        alt: 'My custom alt',
+        width: 1200,
+        height: 630,
       },
     ],
     locale: 'en_US',
