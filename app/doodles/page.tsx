@@ -9,7 +9,6 @@ export const dynamic = 'force-dynamic'
 
 export const metadata = {
   title: 'DivSplash — Doodles',
-  description: 'Welcome to DivSplash!',
 }
 
 export default async function DoodlesPage() {
@@ -48,7 +47,7 @@ export default async function DoodlesPage() {
           />
         </div>
       </div>
-      <ul className="grid gap-2 pb-5 md:grid-cols-3 lg:grid-cols-4">
+      <ul className="grid gap-2 py-10 md:grid-cols-3 lg:grid-cols-4">
         {doodles?.map(doodle => {
           return (
             <li key={doodle.id} className="w-full">
