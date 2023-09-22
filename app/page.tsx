@@ -6,8 +6,11 @@ export const dynamic = 'force-dynamic'
 export const metadata: Metadata = {
   title: 'DivSplash — Homepage ',
   description:
-    'Snag some fantastic doodles for your websites, apps or designs!',
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem fuga quibusdam itaque illum sapiente, accusantium cumque voluptatum! Quibusdam, ipsa libero. voluptatum! Quibusdam, ipsa libero.',
   openGraph: {
+    title: 'DivSplash — Homepage',
+    description:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem fuga quibusdam itaque illum sapiente, accusantium cumque voluptatum! Quibusdam, ipsa libero. voluptatum! Quibusdam, ipsa libero.',
     url: 'https://www.divsplash.co',
     siteName: 'DivSplash',
     images: [
