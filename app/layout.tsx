@@ -19,9 +19,9 @@ export function generateMetadata(): Metadata {
       siteName: 'DivSplash',
       images: [
         {
-          url: 'https://divsplash.co/api/og/home',
-          width: 1200,
-          height: 630,
+          url: 'https://uploadthing.com/og.jpg',
+          width: 1536,
+          height: 768,
         },
       ],
       locale: 'en_US',
