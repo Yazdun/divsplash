@@ -58,21 +58,20 @@ export default async function About() {
         </div>
         <div>
           Brought to you by{' '}
-          <Text asChild color="crimson">
-            <a
-              className="font-bold"
-              href="https://twitter.com/velpcode"
-              target="_blank"
-            >
-              Velp
-            </a>
-          </Text>{' '}
+          <a
+            className="font-bold text-blue-500"
+            href="https://twitter.com/velpcode"
+            target="_blank"
+          >
+            Velp
+          </a>{' '}
           and{' '}
-          <Text asChild color="crimson">
-            <a className="font-bold" href="https://twitter.com/Yazdun">
-              Yaz
-            </a>
-          </Text>
+          <a
+            className="font-bold text-blue-500"
+            href="https://twitter.com/Yazdun"
+          >
+            Yaz
+          </a>
         </div>
       </div>
       <Separator size="4" />

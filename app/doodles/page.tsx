@@ -7,6 +7,7 @@ import { cookies } from 'next/headers'
 import { DoodleAuthDialog, DoodleDetailsDialog } from '@/components/doodles'
 import DoodleImage from '@/assets/aada.png'
 import Image from 'next/image'
+import { LandingFeaturesServer, LandingQaClient } from '@/components/landing'
 
 export const dynamic = 'force-dynamic'
 
@@ -63,6 +64,12 @@ export default async function DoodlesPage() {
           )
         })}
       </ul>
+
+      <div className="py-10">
+        <LandingQaClient />
+      </div>
+
+      <LandingFeaturesServer />
     </main>
   )
 }
