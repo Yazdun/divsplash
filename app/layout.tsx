@@ -53,7 +53,7 @@ export default function RootLayout({
             <ul className="flex flex-wrap justify-center gap-3">
               <li>
                 <Button asChild variant="ghost" color="gray">
-                  <Link href="/terms">Terms of Service</Link>
+                  <Link href="/tos">Terms of Service</Link>
                 </Button>
               </li>
               <li>
@@ -63,7 +63,7 @@ export default function RootLayout({
               </li>
               <li>
                 <Button asChild variant="ghost" color="gray">
-                  <Link href="/privacy">Privacy Policy</Link>
+                  <Link href="/privacy-policy">Privacy Policy</Link>
                 </Button>
               </li>
               <li>
