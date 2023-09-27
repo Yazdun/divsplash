@@ -25,7 +25,7 @@ export const LandingFeaturesServer = () => {
         {data.map(({ title, desc, emoji }) => (
           <li
             key={title}
-            className="w-full px-5 py-10 space-y-5 text-center lg:p-10 bg-gradient-to-tr rounded-xl from-zinc-50 to-zinc-200"
+            className="w-full px-5 py-10 space-y-5 text-center lg:p-10 bg-gradient-to-br rounded-xl from-zinc-50 via-zinc-200 to-zinc-100"
           >
             <span className="text-6xl">{emoji}</span>
             <h2 className="text-xl font-bold text-zinc-600">{title}</h2>
