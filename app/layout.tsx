@@ -1,10 +1,11 @@
 import { NavigationTopbarServer } from '@/components'
 import clsx from 'clsx'
-import { Theme } from '@radix-ui/themes'
+import { Button, Theme } from '@radix-ui/themes'
 import { Toaster } from 'react-hot-toast'
 import '@radix-ui/themes/styles.css'
 import './globals.css'
 import { Metadata } from 'next' // if using TypeScript
+import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
 
@@ -47,8 +48,30 @@ export default function RootLayout({
         <Theme>
           <NavigationTopbarServer />
           <main className="min-h-[95vh]">{children}</main>
-          <footer className="p-5 text-center border-t-2 border-zinc-100 bg-white sticky top-[100%]">
-            DivSplash | Made with ❤️
+          <footer className="border-t-2 p-5 space-y-2 text-center border-zinc-100 bg-white sticky top-[100%]">
+            <p className="font-bold">DivSplash | Made with ❤️</p>
+            <ul className="flex flex-wrap justify-center gap-3">
+              <li>
+                <Button asChild variant="ghost" color="gray">
+                  <Link href="/terms">Terms of Service</Link>
+                </Button>
+              </li>
+              <li>
+                <Button asChild variant="ghost" color="gray">
+                  <Link href="/about">About</Link>
+                </Button>
+              </li>
+              <li>
+                <Button asChild variant="ghost" color="gray">
+                  <Link href="/privacy">Privacy Policy</Link>
+                </Button>
+              </li>
+              <li>
+                <Button asChild variant="ghost" color="gray">
+                  <Link href="/doodles">Doodles</Link>
+                </Button>
+              </li>
+            </ul>
           </footer>
         </Theme>
       </body>
