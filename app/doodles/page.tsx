@@ -4,7 +4,7 @@ import {
 } from '@supabase/auth-helpers-nextjs'
 import React from 'react'
 import { cookies } from 'next/headers'
-import { DoodleAuthDialog, DoodleDetailsDialog } from '@/components'
+import { DoodleAuthDialog, DoodleDetailsDialog } from '@/components/doodles'
 import DoodleImage from '@/assets/aada.png'
 import Image from 'next/image'
 

@@ -2,11 +2,11 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
 import {
-  Card,
   NavigationCardServer,
   TNavigationCardServer,
-  UserCardServer,
-} from '@/components'
+} from '@/components/navigation'
+import { Card } from '@/components/ui'
+import { UserCardServer } from '@/components/user'
 import { ROUTES } from '@/constants'
 import { BsHeart } from 'react-icons/bs'
 import { FiDownloadCloud } from 'react-icons/fi'
@@ -48,7 +48,9 @@ export default async function UserLayout({
 
   return (
     <main className="container p-5 space-y-5">
-      <h1 className="text-lg font-bold">DivSplash User Panel 💻</h1>
+      <h1 className="text-lg font-bold text-slate-700">
+        DivSplash User Panel 🪴
+      </h1>
       <div className="max-w-lg gap-5 md:max-w-full lg:flex md:items-start">
         <Card
           style={{ padding: 0 }}

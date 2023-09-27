@@ -1,7 +1,8 @@
 import React from 'react'
 import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { LikesTableServer, UserItemStatusServer } from '@/components'
+import { UserItemStatusServer } from '@/components/user'
+import { LikesTableServer } from '@/components/like'
 import { IoHeartDislikeOutline } from 'react-icons/io5'
 
 export const dynamic = 'force-dynamic'

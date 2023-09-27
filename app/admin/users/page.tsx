@@ -1,4 +1,4 @@
-import { Card, UsersTableServer } from '@/components'
+import { UsersTableServer } from '@/components/user'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import React from 'react'
 import { cookies } from 'next/headers'

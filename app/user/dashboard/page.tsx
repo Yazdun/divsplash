@@ -1,7 +1,8 @@
 import React from 'react'
 import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { Card, DownloadsTableServer, UserItemStatusServer } from '@/components'
+import { UserItemStatusServer } from '@/components/user'
+import { DownloadsTableServer } from '@/components/downloads'
 import { MdOutlineFolderOff } from 'react-icons/md'
 
 export const dynamic = 'force-dynamic'

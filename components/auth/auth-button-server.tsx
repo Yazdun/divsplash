@@ -1,8 +1,8 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { AuthDialogClient, UserProfilePopoverClient } from '@/components'
+import { UserProfilePopoverClient } from '@/components/user'
+import { AuthDialogClient } from '@/components/auth'
 import { cookies } from 'next/headers'
 import { Button } from '@radix-ui/themes'
-import { AiOutlinePlus, AiOutlineUser } from 'react-icons/ai'
 import { FaArrowRightLong } from 'react-icons/fa6'
 
 export const dynamic = 'force-dynamic'

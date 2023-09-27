@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 import {
-  AuthButtonServer,
   NavigationRoutesDesktop,
   NavigationRoutesMobile,
-} from '@/components'
+} from '@/components/navigation'
+import { AuthButtonServer } from '@/components/auth'
 
 export const NavigationTopbarServer = () => {
   return (

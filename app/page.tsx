@@ -1,4 +1,4 @@
-import { LandingHeroServer } from '@/components'
+import { LandingHeroServer } from '@/components/landing'
 
 export const dynamic = 'force-dynamic'
 

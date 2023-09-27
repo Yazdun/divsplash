@@ -1,4 +1,4 @@
-import { NavigationTopbarServer } from '@/components'
+import { NavigationTopbarServer } from '@/components/navigation'
 import clsx from 'clsx'
 import { Button, Theme } from '@radix-ui/themes'
 import { Toaster } from 'react-hot-toast'

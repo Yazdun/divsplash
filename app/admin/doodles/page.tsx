@@ -1,4 +1,5 @@
-import { DoodlesTableServer, UploadDoodleDialog } from '@/components'
+import { UploadDoodleDialog } from '@/components/doodles'
+import { DoodlesTableServer } from '@/components/doodles'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import React from 'react'
 import { cookies } from 'next/headers'

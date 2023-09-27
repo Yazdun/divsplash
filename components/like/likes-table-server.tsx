@@ -1,7 +1,15 @@
-import { Avatar, Button, Table } from '@radix-ui/themes'
+import { Avatar, Button } from '@radix-ui/themes'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 import React from 'react'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
 
 type LikeWithInformation = TLike & {
   userProfile: TProfile
@@ -15,27 +23,27 @@ export const LikesTableServer = ({
 }) => {
   return (
     <div className="w-full">
-      <Table.Root variant="ghost">
-        <Table.Header>
-          <Table.Row>
-            <Table.ColumnHeaderCell>Title</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Liked At</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Liked By</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Details</Table.ColumnHeaderCell>
-          </Table.Row>
-        </Table.Header>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="text-black">Title</TableHead>
+            <TableHead className="text-black">Date</TableHead>
+            <TableHead className="text-black">Profile</TableHead>
+            <TableHead className="text-right text-black"></TableHead>
+          </TableRow>
+        </TableHeader>
 
-        <Table.Body>
+        <TableBody>
           {likes.map(like => {
             return (
-              <Table.Row key={like.id}>
-                <Table.RowHeaderCell>
+              <TableRow key={like.id}>
+                <TableCell>
                   <strong>{like.likedDoodle.title}</strong>
-                </Table.RowHeaderCell>
-                <Table.Cell>
-                  {dayjs(like.created_at).format('DD MMMM YYYY')}
-                </Table.Cell>
-                <Table.Cell className="flex items-center gap-2">
+                </TableCell>
+                <TableCell>
+                  {dayjs(like.created_at).format('DD MMM YYYY')}
+                </TableCell>
+                <TableCell className="flex items-center gap-2">
                   <Avatar
                     size="1"
                     src={like.userProfile.avatar_url.replaceAll('"', '')}
@@ -43,17 +51,17 @@ export const LikesTableServer = ({
                   />
 
                   <span>{like.userProfile.name.replaceAll('"', '')}</span>
-                </Table.Cell>
-                <Table.Cell>
+                </TableCell>
+                <TableCell className="text-right">
                   <Button variant="ghost">
                     <Link href="/doodles">View Doodle</Link>
                   </Button>
-                </Table.Cell>
-              </Table.Row>
+                </TableCell>
+              </TableRow>
             )
           })}
-        </Table.Body>
-      </Table.Root>
+        </TableBody>
+      </Table>
     </div>
   )
 }

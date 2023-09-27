@@ -1,7 +1,7 @@
 import { Button } from '@radix-ui/themes'
 import Link from 'next/link'
 import React from 'react'
-import { Card } from '@/components'
+import { Card } from '@/components/ui'
 import { IconType } from 'react-icons'
 
 export const UserItemStatusServer = ({
