@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic'
 export default async function TermsAndServices() {
   return (
     <main className="container px-5 py-10 space-y-5">
-      <h1 className="text-2xl font-bold">Welcome to DivSplash!</h1>
+      <h1 className="text-2xl font-bold">DivSplash Terms of Services</h1>
       <Separator size="4" />
       <p>Effective Date: {dayjs().format('YYYY MMMM DD')}</p>
 
