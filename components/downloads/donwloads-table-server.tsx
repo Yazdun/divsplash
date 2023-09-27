@@ -1,4 +1,12 @@
-import { Avatar, Button, Table } from '@radix-ui/themes'
+import { Avatar, Button } from '@radix-ui/themes'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 import React from 'react'
@@ -15,27 +23,26 @@ export const DownloadsTableServer = ({
 }) => {
   return (
     <div className="w-full">
-      <Table.Root variant="ghost">
-        <Table.Header>
-          <Table.Row>
-            <Table.ColumnHeaderCell>Title</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Downloaded At</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Downloaded By</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Details</Table.ColumnHeaderCell>
-          </Table.Row>
-        </Table.Header>
-
-        <Table.Body>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="text-black">Title</TableHead>
+            <TableHead className="text-black">Date</TableHead>
+            <TableHead className="text-black">Profile</TableHead>
+            <TableHead className="text-right text-black"></TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
           {downloads.map(download => {
             return (
-              <Table.Row key={download.id}>
-                <Table.RowHeaderCell>
-                  <strong>{download.downloadedDoddle.title}</strong>
-                </Table.RowHeaderCell>
-                <Table.Cell>
+              <TableRow key={download.id}>
+                <TableCell className="font-medium">
+                  {download.downloadedDoddle.title}
+                </TableCell>
+                <TableCell>
                   {dayjs(download.created_at).format('DD MMMM YYYY')}
-                </Table.Cell>
-                <Table.Cell className="flex items-center gap-2">
+                </TableCell>
+                <TableCell className="flex items-center gap-2">
                   <Avatar
                     size="1"
                     src={download.userProfile.avatar_url.replaceAll('"', '')}
@@ -43,17 +50,17 @@ export const DownloadsTableServer = ({
                   />
 
                   <span>{download.userProfile.name.replaceAll('"', '')}</span>
-                </Table.Cell>
-                <Table.Cell>
+                </TableCell>
+                <TableCell className="text-right">
                   <Button variant="ghost">
                     <Link href="/doodles">View Doodle</Link>
                   </Button>
-                </Table.Cell>
-              </Table.Row>
+                </TableCell>
+              </TableRow>
             )
           })}
-        </Table.Body>
-      </Table.Root>
+        </TableBody>
+      </Table>
     </div>
   )
 }
