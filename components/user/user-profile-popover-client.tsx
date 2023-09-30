@@ -64,30 +64,29 @@ export const UserProfilePopoverClient = ({
         </div>
 
         <ul className="border-t">
-          <li className="transition-all border-b hover:bg-zinc-100 border-zinc-300">
-            <Link
-              onClick={() => setOpen(prev => !prev)}
-              className="flex items-center justify-between p-5"
-              href={
-                role === 'admin'
-                  ? ROUTES.ADMIN.DASHBOARD
-                  : ROUTES.USER.DASHBOARD
-              }
-            >
-              {role === 'admin' ? 'Admin Panel' : 'Dashboard'}
-              <AiOutlineUser className="text-xl" />
-            </Link>
-          </li>
-          <li className="transition-all border-b hover:bg-zinc-100 border-zinc-300">
-            <Link
-              className="flex items-center justify-between p-5"
-              onClick={() => setOpen(prev => !prev)}
-              href={ROUTES.USER.DASHBOARD}
-            >
-              Downloads
-              <BsFolder2Open className="text-xl" />
-            </Link>
-          </li>
+          {role === 'admin' ? (
+            <li className="transition-all border-b hover:bg-zinc-100 border-zinc-300">
+              <Link
+                onClick={() => setOpen(prev => !prev)}
+                className="flex items-center justify-between p-5"
+                href={ROUTES.ADMIN.DASHBOARD}
+              >
+                Admin Panel
+                <AiOutlineUser className="text-xl" />
+              </Link>
+            </li>
+          ) : (
+            <li className="transition-all border-b hover:bg-zinc-100 border-zinc-300">
+              <Link
+                className="flex items-center justify-between p-5"
+                onClick={() => setOpen(prev => !prev)}
+                href={ROUTES.USER.DASHBOARD}
+              >
+                Downloads
+                <BsFolder2Open className="text-xl" />
+              </Link>
+            </li>
+          )}
           <li className="transition-all text-rose-500">
             <button
               onClick={handleSignOut}

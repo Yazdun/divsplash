@@ -28,7 +28,10 @@ export async function LandingHeroServer() {
   return (
     <div className="flex items-center justify-center h-[87vh]">
       <div className="container flex flex-col items-center p-5 lg:gap-10 lg:flex-row lg:justify-center">
-        <div className="hidden p-10 w-sm rounded-3xl shadow-4xl -rotate-3 lg:flex">
+        <Link
+          href="/doodles"
+          className="hidden p-10 transition-all w-sm rounded-3xl shadow-4xl -rotate-3 hover:shadow-xl hover:-rotate-6 hover:scale-105 lg:flex"
+        >
           <Image
             src={DOOMSCROLL}
             width={300}
@@ -36,7 +39,7 @@ export async function LandingHeroServer() {
             alt="doomscroll dude"
             placeholder="blur"
           />
-        </div>
+        </Link>
         <div className="flex flex-col items-center gap-5 p-5 text-center lg:items-start lg:text-left lg:justify-between">
           <div className="relative">
             <h1 className="relative text-4xl font-black md:text-5xl -rotate-3 lg:rotate-0">
@@ -46,7 +49,10 @@ export async function LandingHeroServer() {
               <Image src={ARROW} alt="" />
             </div>
           </div>
-          <div className="p-10 w-sm rounded-3xl shadow-4xl rotate-3 lg:hidden">
+          <Link
+            href="/doodles"
+            className="p-10 w-sm rounded-3xl shadow-4xl rotate-3 lg:hidden"
+          >
             <Image
               width={200}
               height={200}
@@ -54,7 +60,7 @@ export async function LandingHeroServer() {
               alt="doomscroll dude"
               placeholder="blur"
             />
-          </div>
+          </Link>
           <div className="flex flex-col items-center justify-center font-medium">
             <p className="text-zinc-500 md:text-lg">
               Snag some fantastic doodles for your websites, apps or designs.

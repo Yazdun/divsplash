@@ -18,7 +18,7 @@ export const AuthDialogClient = ({
       <Dialog.Trigger>{triggerComponent}</Dialog.Trigger>
       <Dialog.Content
         style={{ maxWidth: 500, margin: 20 }}
-        className="m-5 space-y-4"
+        className="py-10 space-y-4"
       >
         <div className="text-center">
           <Dialog.Title>{title}</Dialog.Title>

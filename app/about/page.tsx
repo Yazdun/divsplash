@@ -59,7 +59,7 @@ export default async function About() {
         <div>
           Brought to you by{' '}
           <a
-            className="font-bold text-blue-500"
+            className="font-bold text-red-500"
             href="https://twitter.com/velpcode"
             target="_blank"
           >
@@ -67,7 +67,7 @@ export default async function About() {
           </a>{' '}
           and{' '}
           <a
-            className="font-bold text-blue-500"
+            className="font-bold text-red-500"
             href="https://twitter.com/Yazdun"
           >
             Yaz

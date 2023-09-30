@@ -51,7 +51,7 @@ export default async function UserLayout({
       <h1 className="text-lg font-bold text-slate-700">
         DivSplash User Panel 🪴
       </h1>
-      <div className="max-w-lg gap-5 lg:flex md:items-start">
+      <div className="w-full gap-5 lg:flex md:items-start">
         <Card
           style={{ padding: 0 }}
           className="w-full lg:max-w-[250px] mb-5 lg:sticky top-20"
