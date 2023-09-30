@@ -9,28 +9,6 @@ import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
 
-export function generateMetadata(): Metadata {
-  return {
-    title: 'DivSplash',
-    description:
-      'Snag some fantastic doodles for your websites, apps or designs!',
-
-    openGraph: {
-      url: 'https://www.divsplash.co',
-      siteName: 'DivSplash',
-      images: [
-        {
-          url: 'https://www.divsplash.co/og.png',
-          width: 1200,
-          height: 630,
-        },
-      ],
-      locale: 'en_US',
-      type: 'website',
-    },
-  }
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -38,6 +16,28 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta property="og:title" content="DivSplash" />
+        <meta
+          property="og:description"
+          content="Snag some fantastic doodles for your websites, apps or designs!"
+        />
+        <meta property="og:url" content="https://uploadthing.com/" />
+        <meta property="og:site_name" content="DivSplash" />
+        <meta property="og:image" content="https://uploadthing.com/og.jpg" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="https://uploadthing.com" />
+        <meta name="twitter:title" content="DivSplash" />
+        <meta
+          name="twitter:description"
+          content="Snag some fantastic doodles for your websites, apps or designs!"
+        />
+        <meta name="twitter:image" content="https://uploadthing.com/og.jpg" />
+        <meta name="next-size-adjust" />
+      </head>
       <body className={clsx('text-neutral-700')}>
         <Toaster
           position="bottom-center"
