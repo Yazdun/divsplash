@@ -22,20 +22,20 @@ export default function RootLayout({
           property="og:description"
           content="Snag some fantastic doodles for your websites, apps or designs!"
         />
-        <meta property="og:url" content="https://uploadthing.com/" />
+        <meta property="og:url" content="https://divsplash.co" />
         <meta property="og:site_name" content="DivSplash" />
-        <meta property="og:image" content="https://uploadthing.com/og.jpg" />
+        <meta property="og:image" content="https://www.divsplash.co/og.png" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="https://uploadthing.com" />
+        <meta name="twitter:site" content="https://divsplash.co" />
         <meta name="twitter:title" content="DivSplash" />
         <meta
           name="twitter:description"
           content="Snag some fantastic doodles for your websites, apps or designs!"
         />
-        <meta name="twitter:image" content="https://uploadthing.com/og.jpg" />
+        <meta name="twitter:image" content="https://www.divsplash.co/og.png" />
         <meta name="next-size-adjust" />
       </head>
       <body className={clsx('text-neutral-700')}>
