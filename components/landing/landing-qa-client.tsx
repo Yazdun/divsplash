@@ -15,17 +15,14 @@ export const LandingQaClient = () => {
           If you can&apos;t find the information you&apos;re looking for, feel
           free to reach out to us via Twitter at{' '}
           <a
-            className="font-bold text-blue-500"
+            className="font-bold"
             href="https://twitter.com/velpcode"
             target="_blank"
           >
             @Velpcode
           </a>{' '}
           and{' '}
-          <a
-            className="font-bold text-blue-500"
-            href="https://twitter.com/Yazdun"
-          >
+          <a className="font-bold" href="https://twitter.com/Yazdun">
             @Yazdun
           </a>
           . We&apos;re here to make your DivSplash experience as seamless and
