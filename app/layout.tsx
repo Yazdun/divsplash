@@ -20,7 +20,7 @@ export function generateMetadata(): Metadata {
       siteName: 'DivSplash',
       images: [
         {
-          url: 'https://divsplash.co/api/og/home',
+          url: 'https://www.divsplash.co/og.png',
           width: 1200,
           height: 630,
         },
