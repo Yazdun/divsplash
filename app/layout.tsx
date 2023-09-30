@@ -4,7 +4,6 @@ import { Button, Theme } from '@radix-ui/themes'
 import { Toaster } from 'react-hot-toast'
 import '@radix-ui/themes/styles.css'
 import './globals.css'
-import { Metadata } from 'next' // if using TypeScript
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
